@@ -1,0 +1,139 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "nome": "Nome",
+      "email": "email@email.com",
+      "senha": "Senha123",
+      "recursos": {
+        "gold": "200000000",
+        "energia": "10",
+        "gema": 500
+      },
+      "itens": [
+        {
+          "id": "e0707249-3dbb-4525-9ef6-deb8cf220927",
+          "idDoItem": 2,
+          "rarity": 1
+        },
+        {
+          "id": "9f071ad1-d3ee-41bb-9be5-f445042ad078",
+          "idDoItem": 2,
+          "rarity": 1
+        },
+        {
+          "id": "875de2df-bf73-4270-b90b-ebd2916a0913",
+          "idDoItem": 4,
+          "rarity": 2
+        },
+        {
+          "id": "fd9698fc-eeb6-4297-b5fe-a8d7d9e5e94b",
+          "idDoItem": 1,
+          "rarity": 1
+        },
+        {
+          "id": "b1f504cd-bc5f-442e-a0b8-502789122b97",
+          "idDoItem": 10,
+          "rarity": 3
+        }
+      ],
+      "itensEquipados": [],
+      "personagens": [
+        {
+          "id": "39ede888-0fe6-47bc-81e9-9d0a10d9357b",
+          "nome": "Bruxa",
+          "força": 2000,
+          "defesa": 1000,
+          "urlImage": "bruxa"
+        }
+      ],
+      "personagemEquipado": null
+    }
+  ],
+  "item": [
+    {
+      "nome": "Kunai",
+      "desc": "A arma dos ninjas",
+      "urlImage": "weapon",
+      "type": "weapon",
+      "id": 1
+    },
+    {
+      "nome": "Katana",
+      "desc": "Espada Janoponesa",
+      "urlImage": "weapon",
+      "type": "weapon",
+      "id": 2
+    },
+    {
+      "nome": "Dragon Ring",
+      "desc": "Anel com os poderes do dragão",
+      "urlImage": "ring",
+      "type": "ring",
+      "id": 3
+    },
+    {
+      "nome": "Diamond Ring",
+      "desc": "Anel com preço inestimavel",
+      "urlImage": "ring",
+      "type": "ring",
+      "id": 4
+    },
+    {
+      "nome": "Luvas do Lutador",
+      "desc": "Uma luva feita e usados por lendarios lutadores",
+      "urlImage": "gloves",
+      "type": "gloves",
+      "id": 5
+    },
+    {
+      "nome": "Luva do Vazio",
+      "desc": "Luva com poderes do vazio",
+      "urlImage": "gloves",
+      "type": "gloves",
+      "id": 6
+    },
+    {
+      "nome": "Dragon Helmet",
+      "desc": "Capacete de dragão",
+      "urlImage": "helmet",
+      "type": "helmet",
+      "id": 7
+    },
+    {
+      "nome": "Gold Helmet",
+      "desc": "Capacete de ouro",
+      "urlImage": "helmet",
+      "type": "helmet",
+      "id": 8
+    },
+    {
+      "nome": "Dragon Chestplate",
+      "desc": "Armadura de dragão",
+      "urlImage": "chestplate",
+      "type": "chestplate",
+      "id": 9
+    },
+    {
+      "nome": "Silver Chestplate",
+      "desc": "Armadura de prata",
+      "urlImage": "chestplate",
+      "type": "chestplate",
+      "id": 10
+    },
+    {
+      "nome": "Steel Boots",
+      "desc": "Botas de aço",
+      "urlImage": "boots",
+      "type": "boots",
+      "id": 11
+    },
+    {
+      "nome": "Fire Boots",
+      "desc": "Botas de fogo",
+      "urlImage": "boots",
+      "type": "boots",
+      "id": 12
+    }
+  ]
+}
