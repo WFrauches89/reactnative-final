@@ -10,6 +10,7 @@ const ItemComponent = ({
   setSelectedInventoryItem,
 }) => {
   function abrirModal() {
+    console.log(item);
     setSelectedInventoryItem(item);
     setSelectedIndex(item.id);
     setIsModalVisible(true);

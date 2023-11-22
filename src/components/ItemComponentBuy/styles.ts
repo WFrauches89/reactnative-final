@@ -2,33 +2,31 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    height: 60,
-    width: 60,
+    height: 70,
+    width: 70,
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: 'black',
     borderRadius: 6,
   },
   bgRariry1: {
-    backgroundColor: '#454141',
+    backgroundColor: 'grey',
   },
   bgRariry2: {
-    backgroundColor: '#003c00',
+    backgroundColor: 'green',
   },
   bgRariry3: {
-    backgroundColor: '#051a54',
+    backgroundColor: 'blue',
   },
   bgRariry4: {
-    backgroundColor: '#5c045c',
+    backgroundColor: 'purple',
   },
   bgRariry5: {
-    backgroundColor: '#AE8625',
-    // backgroundColor: '#560d0d',
+    backgroundColor: 'yellow',
   },
   imageItem: {
-    width: 50,
-    height: 50,
-    resizeMode: 'contain',
+    width: 55,
+    height: 55,
   },
 });

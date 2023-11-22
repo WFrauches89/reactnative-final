@@ -4,8 +4,17 @@ import Chest from './assets/favicon.png';
 import api from './src/services/api/api';
 import { v4 as uuidv4 } from 'uuid';
 import { getRandomBytes } from 'react-native-get-random-values';
+import { ModalObtainedItem } from './src/components/Modals/ModalObtainedItem';
 
 export default function App() {
+  const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
+  const [refresh, setRefresh] = React.useState<boolean>(false);
+  const [obtainedItem, setObtainedItem] = React.useState<any>(null);
+
+  React.useEffect(() => {
+    if (obtainedItem != null) abrirModal();
+  }, [obtainedItem]);
+
   const openChest = (qnt: number) => {
     api.get(`user/1`).then((r) => {
       let recursosAtualizado = r.data.recursos;
@@ -13,10 +22,10 @@ export default function App() {
       const novoItemId = uuidv4({ random: getRandomBytes });
       const idItemAleatorio = Math.floor(Math.random() * 12) + 1;
       let novaListaDeItens: any;
+      let rarityWithProbability: any;
 
       if (qnt == 800) {
-        console.log('Ativou 800');
-        const rarityWithProbability = getRandomChestCommon();
+        rarityWithProbability = getRandomChestCommon();
         novaListaDeItens = [
           ...itens,
           {
@@ -26,8 +35,7 @@ export default function App() {
           },
         ];
       } else if (qnt == 2100) {
-        console.log('Ativou 2100');
-        const rarityWithProbability = getRandomChestRare();
+        rarityWithProbability = getRandomChestRare();
         novaListaDeItens = [
           ...itens,
           {
@@ -42,6 +50,11 @@ export default function App() {
         recursosAtualizado.gema -= qnt;
         api.patch(`user/1`, { itens: novaListaDeItens }).then(() => {
           api.patch(`user/1`, { recursos: recursosAtualizado });
+        });
+        setObtainedItem({
+          id: novoItemId,
+          idDoItem: idItemAleatorio,
+          rarity: rarityWithProbability,
         });
       } else {
         alert('Gemas Insuficientes!');
@@ -73,6 +86,10 @@ export default function App() {
       api.patch(`user/1`, { recursos: recursosAtualizado });
     });
   };
+
+  function abrirModal() {
+    setIsModalVisible(true);
+  }
 
   return (
     <View style={styles.container}>
@@ -153,7 +170,7 @@ export default function App() {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            buyGem(120000);
+            openChest(120000);
           }}
           style={styles.containerBuyGemsCard}
         >
@@ -162,6 +179,13 @@ export default function App() {
           <Text style={styles.openChestText}>R$ 300,00</Text>
         </TouchableOpacity>
       </View>
+      {isModalVisible && (
+        <ModalObtainedItem
+          obtainedItem={obtainedItem}
+          isModalVisible={isModalVisible}
+          setIsModalVisible={setIsModalVisible}
+        />
+      )}
     </View>
   );
 }

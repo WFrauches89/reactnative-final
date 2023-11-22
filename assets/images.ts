@@ -7,6 +7,7 @@ const images = {
   boots: require('../assets/boot.png'),
   feiticeiro: require('../assets/feiticeiro.png'),
   bruxa: require('../assets/bruxa.png'),
+  grandMasterHeavySiegeCrossbow: require('../assets/Crossbow.png'),
 };
 
 export default images;

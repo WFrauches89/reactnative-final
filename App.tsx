@@ -23,7 +23,7 @@ export default function App() {
   const [itensInventory, setItensInventory] = React.useState([]);
   const [itensEquipped, setItensEquipped] = React.useState([]);
   const [characters, setCharacters] = React.useState([]);
-  const [characterUsing, setCharacterUsing] = React.useState(null);
+  const [characterUsing, setCharacterUsing] = React.useState([]);
   const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
   const [isModalVisibleEquipped, setIsModalVisibleEquipped] =
     React.useState<boolean>(false);
@@ -39,6 +39,7 @@ export default function App() {
         setItensBd(res.data.itens);
       })
       .catch((error) => {
+        console.log('4');
         console.log(error);
       })
       .finally(() => {});
@@ -51,6 +52,7 @@ export default function App() {
         setItensUsingBd(res.data.itensEquipados);
       })
       .catch((error) => {
+        console.log('3');
         console.log(error);
       })
       .finally(() => {});
@@ -62,6 +64,7 @@ export default function App() {
         setCharacters(res.data.personagens);
       })
       .catch((error) => {
+        console.log('2');
         console.log(error);
       })
       .finally(() => {});
@@ -70,10 +73,10 @@ export default function App() {
     api
       .get('/user/1')
       .then((res) => {
-        console.log(res.data.personagemEquipado);
         setCharacterUsing(res.data.personagemEquipado);
       })
       .catch((error) => {
+        console.log('1');
         console.log(error);
       })
       .finally(() => {});
@@ -132,6 +135,7 @@ export default function App() {
     ];
     api.patch(`user/1`, { personagens: character });
     api.patch(`user/1`, { personagemEquipado: character });
+    setRefresh((r) => !r);
   };
 
   const getItensUsing = () => {
@@ -170,7 +174,7 @@ export default function App() {
                   itensEquipped.some((i) => i.type === 'weapon') ? (
                     []
                   ) : (
-                    <Image source={Foto} />
+                    <Image style={styles.imageItemDefault} source={Foto} />
                   ),
                 )}
           </View>
@@ -193,7 +197,7 @@ export default function App() {
                   itensEquipped.some((i) => i.type === 'ring') ? (
                     []
                   ) : (
-                    <Image source={Foto} />
+                    <Image style={styles.imageItemDefault} source={Foto} />
                   ),
                 )}
           </View>
@@ -216,18 +220,18 @@ export default function App() {
                   itensEquipped.some((i) => i.type === 'gloves') ? (
                     []
                   ) : (
-                    <Image source={Foto} />
+                    <Image style={styles.imageItemDefault} source={Foto} />
                   ),
                 )}
           </View>
         </View>
         <View>
-          {characters.length > 0 && (
+          {characters && characters.length > 0 && characters[0] != null && (
             <View style={styles.containerCharacter}>
-              {characterUsing && (
+              {characters[0].urlImage && characterUsing[0]?.urlImage && (
                 <Image
                   style={styles.characterImage}
-                  source={images[characterUsing.urlImage]}
+                  source={images[characterUsing[0].urlImage]}
                 />
               )}
             </View>
@@ -276,7 +280,7 @@ export default function App() {
                   itensEquipped.some((i) => i.type === 'helmet') ? (
                     []
                   ) : (
-                    <Image source={Foto} />
+                    <Image style={styles.imageItemDefault} source={Foto} />
                   ),
                 )}
           </View>
@@ -299,7 +303,7 @@ export default function App() {
                   itensEquipped.some((i) => i.type === 'chestplate') ? (
                     []
                   ) : (
-                    <Image source={Foto} />
+                    <Image style={styles.imageItemDefault} source={Foto} />
                   ),
                 )}
           </View>
@@ -320,7 +324,7 @@ export default function App() {
                   itensEquipped.some((i) => i.type === 'boots') ? (
                     []
                   ) : (
-                    <Image source={Foto} />
+                    <Image style={styles.imageItemDefault} source={Foto} />
                   ),
                 )}
           </View>
@@ -378,10 +382,14 @@ const styles = StyleSheet.create({
   containerItem: {
     backgroundColor: 'white',
     alignSelf: 'flex-start',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginBottom: 10,
     borderWidth: 2,
     borderColor: 'black',
-    borderRadius: 7,
+    borderRadius: 8,
+    height: 60,
+    width: 60,
   },
   containerCharactersChoice: {
     backgroundColor: 'black',
@@ -430,5 +438,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexWrap: 'wrap',
     gap: 20,
+  },
+  imageItemDefault: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
   },
 });

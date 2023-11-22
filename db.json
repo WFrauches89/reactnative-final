@@ -8,53 +8,138 @@
       "recursos": {
         "gold": "200000000",
         "energia": "10",
-        "gema": 500
+        "gema": 0
       },
       "itens": [
         {
-          "id": "e0707249-3dbb-4525-9ef6-deb8cf220927",
-          "idDoItem": 2,
-          "rarity": 1
-        },
-        {
-          "id": "9f071ad1-d3ee-41bb-9be5-f445042ad078",
-          "idDoItem": 2,
-          "rarity": 1
-        },
-        {
-          "id": "875de2df-bf73-4270-b90b-ebd2916a0913",
+          "id": "5b1ce774-53d2-4291-93b1-d8981c1f1a76",
           "idDoItem": 4,
           "rarity": 2
         },
         {
-          "id": "fd9698fc-eeb6-4297-b5fe-a8d7d9e5e94b",
-          "idDoItem": 1,
+          "id": "85fdfe70-b37b-47db-926a-456b0095fbca",
+          "idDoItem": 3,
           "rarity": 1
         },
         {
-          "id": "b1f504cd-bc5f-442e-a0b8-502789122b97",
-          "idDoItem": 10,
+          "id": "b768cc4e-879a-4d3b-b65b-7b90126e541e",
+          "idDoItem": 6,
+          "rarity": 1
+        },
+        {
+          "id": "67635c0f-b594-463a-bf8c-06c9eb67197e",
+          "idDoItem": 9,
+          "rarity": 2
+        },
+        {
+          "id": "aa25f63d-c243-4afe-89f8-3fdeedace146",
+          "idDoItem": 2,
+          "rarity": 2
+        },
+        {
+          "id": "15c95688-fd0c-429f-8c3b-029cd43991ec",
+          "idDoItem": 11,
+          "rarity": 1
+        },
+        {
+          "id": "f0481075-8a3c-4030-9c0c-2bd70b853ec7",
+          "idDoItem": 3,
+          "rarity": 1
+        },
+        {
+          "id": "0eb0c0bf-8579-4180-bf78-12b138261dd2",
+          "idDoItem": 4,
+          "rarity": 3
+        },
+        {
+          "id": "d352212a-e601-4ea6-9479-58723c28f8f8",
+          "idDoItem": 3,
+          "rarity": 3
+        },
+        {
+          "id": "055b4dc6-d18a-4859-944c-724880e8058c",
+          "idDoItem": 6,
+          "rarity": 2
+        },
+        {
+          "id": "db49e4a8-9952-482a-be1c-228e78d0e1dd",
+          "idDoItem": 5,
+          "rarity": 2
+        },
+        {
+          "id": "8ac9d0cd-5c11-4ef9-9d0a-d805f9c301df",
+          "idDoItem": 8,
+          "rarity": 1
+        },
+        {
+          "id": "a9fe25d8-0b50-4fad-9843-2c8ea6f80edc",
+          "idDoItem": 9,
           "rarity": 3
         }
       ],
-      "itensEquipados": [],
-      "personagens": [
+      "itensEquipados": [
         {
-          "id": "39ede888-0fe6-47bc-81e9-9d0a10d9357b",
-          "nome": "Bruxa",
-          "força": 2000,
-          "defesa": 1000,
-          "urlImage": "bruxa"
+          "type": "ring",
+          "id": "23b3e0fc-b6e7-4c61-bc23-eb4002b25e5a",
+          "idDoItem": 3,
+          "rarity": 2
+        },
+        {
+          "type": "boots",
+          "id": "99cde6fc-36ea-4e7f-92b1-6b600ac7fd6f",
+          "idDoItem": 12,
+          "rarity": 1
+        },
+        {
+          "type": "chestplate",
+          "id": "0cd0ef76-d5f7-489a-9771-07f628c7f1e8",
+          "idDoItem": 9,
+          "rarity": 2
+        },
+        {
+          "type": "weapon",
+          "id": "9167559e-4abd-4ee5-8e1f-c3d0400872b3",
+          "idDoItem": 1,
+          "rarity": 5
+        },
+        {
+          "type": "gloves",
+          "id": "c599716f-5b2e-4859-9396-563ca93d43de",
+          "idDoItem": 6,
+          "rarity": 3
+        },
+        {
+          "type": "helmet",
+          "id": "48f5f1ef-42f6-4cdc-90d8-9b2538866ef5",
+          "idDoItem": 8,
+          "rarity": 2
         }
       ],
-      "personagemEquipado": null
+      "personagens": [
+        {
+          "id": "32b3104b-e39b-473b-bd5c-2107e82ce90d",
+          "nome": "Feiticeiro",
+          "força": 2000,
+          "defesa": 1000,
+          "urlImage": "feiticeiro"
+        }
+      ],
+      "personagemEquipado": [
+        {
+          "id": "32b3104b-e39b-473b-bd5c-2107e82ce90d",
+          "nome": "Feiticeiro",
+          "força": 2000,
+          "defesa": 1000,
+          "urlImage": "feiticeiro"
+        }
+      ]
     }
   ],
   "item": [
     {
       "nome": "Kunai",
       "desc": "A arma dos ninjas",
-      "urlImage": "weapon",
+      "urlImage": "grandMasterHeavySiegeCrossbow",
       "type": "weapon",
       "id": 1
     },
