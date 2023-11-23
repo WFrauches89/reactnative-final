@@ -1,5 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
 
 import api from '../../services/api/api';
 import { v4 as uuidv4 } from 'uuid';
@@ -9,11 +16,9 @@ import { useAuth } from '../../Context/Auth';
 import { useNavigation } from '@react-navigation/native';
 import Chest from '../../../assets/favicon.png';
 
-
 export default function Bau() {
   const { signOut } = useAuth();
   const navigation = useNavigation();
-
 
   const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
   const [refresh, setRefresh] = React.useState<boolean>(false);
@@ -186,19 +191,16 @@ export default function Bau() {
           <Text style={styles.openChestText}>120000 Gems</Text>
           <Text style={styles.openChestText}>R$ 300,00</Text>
         </TouchableOpacity>
-
       </View>
-      <View style={styles.container2}>
-          <TouchableOpacity onPress={() => navigation.navigate('Inventory')} style={styles.containerFormAcess}>
-            <Text style={styles.containerFormAcessText}> Inventory </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.container3}>
-          <TouchableOpacity onPress={() => signOut()} style={styles.containerFormAcess2}>
-            <Text style={styles.containerFormAcessText}> Sair </Text>
-          </TouchableOpacity>
 
-        </View>
+      <View style={styles.container3}>
+        <TouchableOpacity
+          onPress={() => signOut()}
+          style={styles.containerFormAcess2}
+        >
+          <Text style={styles.containerFormAcessText}> Sair </Text>
+        </TouchableOpacity>
+      </View>
       {isModalVisible && (
         <ModalObtainedItem
           obtainedItem={obtainedItem}
@@ -212,7 +214,7 @@ export default function Bau() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
+    marginTop: Platform.OS === 'ios' ? 20 : 0,
     flex: 1,
     backgroundColor: '#c2c2c2',
   },
@@ -275,27 +277,23 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     bottom: '25%',
     alignItems: 'center',
-
-
   },
   containerFormAcessText: {
     fontSize: 24,
     color: '#ffffff',
     fontWeight: 'bold',
-
   },
   container2: {
     marginTop: 350,
     flex: 0.2,
     backgroundColor: '#0c8b1f',
-
   },
   container3: {
     marginTop: 40,
     flex: 0.2,
     backgroundColor: '#140c8b',
-
-  }, containerFormAcess: {
+  },
+  containerFormAcess: {
     position: 'absolute',
     backgroundColor: '#594875',
     borderRadius: 50,
@@ -304,7 +302,5 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     bottom: '25%',
     alignItems: 'center',
-
-
   },
 });

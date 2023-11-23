@@ -1,7 +1,7 @@
-import RoutesAuth from './AuthStack';
 import RoutesNotAuth from './Stack';
 import { useAuth } from '../Context/Auth';
 import { View, Text } from 'react-native';
+import { TabRoutes } from './routers';
 
 export default function Routes() {
   const { authData, loading } = useAuth();
@@ -12,5 +12,5 @@ export default function Routes() {
       </View>
     );
   }
-  return <>{authData ? <RoutesAuth /> : <RoutesNotAuth />}</>;
+  return <>{authData ? <TabRoutes /> : <RoutesNotAuth />}</>;
 }

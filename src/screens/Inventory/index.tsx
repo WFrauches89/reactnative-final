@@ -6,21 +6,23 @@ import {
   View,
   Image,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import ItemComponent from '../../components/ItemComponent';
 import api from '../../services/api/api';
 import Foto from '../../../assets/favicon.png';
-
 import { ModalItemDetails } from '../../components/Modals/ModalDetailsItem';
 import { v4 as uuidv4 } from 'uuid';
 import { getRandomBytes } from 'react-native-get-random-values';
 import images from '../../../assets/images';
-import { useAuth } from '../../Context/Auth';
-import { useNavigation } from '@react-navigation/native';
+import { ModalChangeCharacters } from '../../components/Modals/ModalChangeCharacter';
 
 export default function Inventory() {
-  const { signOut } = useAuth();
-  const navigation = useNavigation();
+  const [isModalCharacterVisible, setIsModalCharacterVisible] =
+    React.useState<boolean>(false);
+  const openModal = () => {
+    setIsModalCharacterVisible(true);
+  };
 
   const [itensBd, setItensBd] = React.useState([]);
   const [itensUsingBd, setItensUsingBd] = React.useState([]);
@@ -46,7 +48,7 @@ export default function Inventory() {
         console.log('4');
         console.log(error);
       })
-      .finally(() => { });
+      .finally(() => {});
   };
 
   const getItensUsingBd = () => {
@@ -59,7 +61,7 @@ export default function Inventory() {
         console.log('3');
         console.log(error);
       })
-      .finally(() => { });
+      .finally(() => {});
   };
   const getCharacters = () => {
     api
@@ -71,7 +73,7 @@ export default function Inventory() {
         console.log('2');
         console.log(error);
       })
-      .finally(() => { });
+      .finally(() => {});
   };
   const getCharactersUsing = () => {
     api
@@ -83,7 +85,7 @@ export default function Inventory() {
         console.log('1');
         console.log(error);
       })
-      .finally(() => { });
+      .finally(() => {});
   };
 
   React.useEffect(() => {
@@ -178,7 +180,11 @@ export default function Inventory() {
                   itensEquipped.some((i) => i.type === 'weapon') ? (
                     []
                   ) : (
-                    <Image key={'a'} style={styles.imageItemDefault} source={Foto} />
+                    <Image
+                      key={'a'}
+                      style={styles.imageItemDefault}
+                      source={Foto}
+                    />
                   ),
                 )}
           </View>
@@ -201,7 +207,11 @@ export default function Inventory() {
                   itensEquipped.some((i) => i.type === 'ring') ? (
                     []
                   ) : (
-                    <Image key={'b'} style={styles.imageItemDefault} source={Foto} />
+                    <Image
+                      key={'b'}
+                      style={styles.imageItemDefault}
+                      source={Foto}
+                    />
                   ),
                 )}
           </View>
@@ -224,7 +234,11 @@ export default function Inventory() {
                   itensEquipped.some((i) => i.type === 'gloves') ? (
                     []
                   ) : (
-                    <Image key={'c'} style={styles.imageItemDefault} source={Foto} />
+                    <Image
+                      key={'c'}
+                      style={styles.imageItemDefault}
+                      source={Foto}
+                    />
                   ),
                 )}
           </View>
@@ -238,6 +252,11 @@ export default function Inventory() {
                   source={images[characterUsing[0].urlImage]}
                 />
               )}
+              <TouchableOpacity onPress={openModal}>
+                <View>
+                  <Text>Open Modal</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           )}
           {characters.length == 0 && (
@@ -284,7 +303,11 @@ export default function Inventory() {
                   itensEquipped.some((i) => i.type === 'helmet') ? (
                     []
                   ) : (
-                    <Image key={'d'} style={styles.imageItemDefault} source={Foto} />
+                    <Image
+                      key={'d'}
+                      style={styles.imageItemDefault}
+                      source={Foto}
+                    />
                   ),
                 )}
           </View>
@@ -307,7 +330,11 @@ export default function Inventory() {
                   itensEquipped.some((i) => i.type === 'chestplate') ? (
                     []
                   ) : (
-                    <Image key={'e'} style={styles.imageItemDefault} source={Foto} />
+                    <Image
+                      key={'e'}
+                      style={styles.imageItemDefault}
+                      source={Foto}
+                    />
                   ),
                 )}
           </View>
@@ -328,13 +355,15 @@ export default function Inventory() {
                   itensEquipped.some((i) => i.type === 'boots') ? (
                     []
                   ) : (
-                    <Image key={'f'} style={styles.imageItemDefault} source={Foto} />
+                    <Image
+                      key={'f'}
+                      style={styles.imageItemDefault}
+                      source={Foto}
+                    />
                   ),
                 )}
           </View>
-          
         </View>
-
       </View>
       <ScrollView style={styles.containerScrollViewItens}>
         <View style={styles.containerItensChest}>
@@ -367,26 +396,31 @@ export default function Inventory() {
               setIsModalVisible={setIsModalVisibleEquipped}
             />
           )}
+          {isModalCharacterVisible && (
+            <ModalChangeCharacters
+              setRefresh={setRefresh}
+              isModalVisible={isModalCharacterVisible}
+              setIsModalVisible={setIsModalCharacterVisible}
+            />
+          )}
         </View>
       </ScrollView>
-      <View style={styles.container2}>
-            <TouchableOpacity onPress={() => navigation.navigate('Bau')} style={styles.containerFormAcess}>
-              <Text style={styles.containerFormAcessText}> Bau </Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.container3}>
 
-            <TouchableOpacity onPress={() => signOut()} style={styles.containerFormAcess2}>
-              <Text style={styles.containerFormAcessText}> Sair </Text>
-            </TouchableOpacity>
-          </View>
+      {/* <View style={styles.container3}>
+        <TouchableOpacity
+          onPress={() => signOut()}
+          style={styles.containerFormAcess2}
+        >
+          <Text style={styles.containerFormAcessText}> Sair </Text>
+        </TouchableOpacity>
+      </View> */}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
+    marginTop: Platform.OS === 'ios' ? 20 : 0,
     flex: 1,
     backgroundColor: '#c2c2c2',
   },
@@ -465,15 +499,13 @@ const styles = StyleSheet.create({
   container2: {
     flex: 0.1,
     backgroundColor: '#0c8b1f',
-    marginTop:25,
-
-
+    marginTop: 25,
   },
   container3: {
     flex: 0.1,
     backgroundColor: '#140c8b',
-
-  }, containerFormAcess: {
+  },
+  containerFormAcess: {
     position: 'absolute',
     backgroundColor: '#594875',
     borderRadius: 50,
@@ -482,8 +514,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     bottom: '25%',
     alignItems: 'center',
-
-
   },
   containerFormAcess2: {
     position: 'absolute',
@@ -494,12 +524,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     bottom: '25%',
     alignItems: 'center',
-
-
-  }, containerFormAcessText: {
+  },
+  containerFormAcessText: {
     fontSize: 24,
     color: '#ffffff',
     fontWeight: 'bold',
-
-  }
+  },
 });

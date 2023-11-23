@@ -8,7 +8,7 @@
       "recursos": {
         "gold": "200000000",
         "energia": "10",
-        "gema": 120400
+        "gema": 117500
       },
       "itens": [
         {
@@ -115,6 +115,16 @@
           "id": "2b6a80a3-c527-4c8d-a783-d6e2906434fd",
           "idDoItem": 11,
           "rarity": 3
+        },
+        {
+          "id": "ba50ed8b-c552-4868-8b64-f12701bf3d8f",
+          "idDoItem": 7,
+          "rarity": 1
+        },
+        {
+          "id": "866a5382-8a1f-404f-b568-b4b609234915",
+          "idDoItem": 2,
+          "rarity": 1
         }
       ],
       "itensEquipados": [
@@ -162,9 +172,16 @@
           "força": 2000,
           "defesa": 1000,
           "urlImage": "feiticeiro"
+        },
+        {
+          "id": "22b3104b-e39b-473b-bd5c-2107e82ce90d",
+          "nome": "Bruxa",
+          "força": 2000,
+          "defesa": 1000,
+          "urlImage": "bruxa"
         }
       ],
-      "personagemEquipado": [
+      "personagemEquipado":[
         {
           "id": "32b3104b-e39b-473b-bd5c-2107e82ce90d",
           "nome": "Feiticeiro",
