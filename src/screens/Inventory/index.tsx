@@ -31,6 +31,10 @@ export default function Inventory() {
   const [itensEquipped, setItensEquipped] = React.useState([]);
   const [characters, setCharacters] = React.useState([]);
   const [characterUsing, setCharacterUsing] = React.useState([]);
+  const [userStats, setUserStats] = React.useState<{
+    attackSum: number;
+    healthSum: number;
+  }>(undefined);
   const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
   const [isModalVisibleEquipped, setIsModalVisibleEquipped] =
     React.useState<boolean>(false);
@@ -45,7 +49,6 @@ export default function Inventory() {
         setItensBd(res.data.itens);
       })
       .catch((error) => {
-        console.log('4');
         console.log(error);
       })
       .finally(() => {});
@@ -58,7 +61,6 @@ export default function Inventory() {
         setItensUsingBd(res.data.itensEquipados);
       })
       .catch((error) => {
-        console.log('3');
         console.log(error);
       })
       .finally(() => {});
@@ -70,7 +72,6 @@ export default function Inventory() {
         setCharacters(res.data.personagens);
       })
       .catch((error) => {
-        console.log('2');
         console.log(error);
       })
       .finally(() => {});
@@ -82,7 +83,6 @@ export default function Inventory() {
         setCharacterUsing(res.data.personagemEquipado);
       })
       .catch((error) => {
-        console.log('1');
         console.log(error);
       })
       .finally(() => {});
@@ -103,6 +103,29 @@ export default function Inventory() {
     getItensUsing();
   }, [itensUsingBd]);
 
+  React.useEffect(() => {
+    getAttack();
+  }, [itensEquipped]);
+
+  const getAttack = () => {
+    if (itensEquipped.length > 0) {
+      const sumAttackHealth = itensEquipped.reduce(
+        (accumulator, currentValue) => {
+          if (['weapon', 'ring', 'gloves'].includes(currentValue.type)) {
+            accumulator.attackSum += currentValue.stats * currentValue.rarity;
+          } else {
+            accumulator.healthSum += currentValue.stats * currentValue.rarity;
+          }
+          return accumulator;
+        },
+        { attackSum: 0, healthSum: 0 },
+      );
+      sumAttackHealth.attackSum += characterUsing[0].attack;
+      sumAttackHealth.healthSum += characterUsing[0].health;
+
+      setUserStats(sumAttackHealth);
+    }
+  };
   const getItensInventory = () => {
     if (itensBd != null && itensBd.length >= 0) {
       const promises = itensBd.map(async (i) => {
@@ -252,13 +275,9 @@ export default function Inventory() {
                   source={images[characterUsing[0].urlImage]}
                 />
               )}
-              <TouchableOpacity onPress={openModal}>
-                <View>
-                  <Text>Open Modal</Text>
-                </View>
-              </TouchableOpacity>
             </View>
           )}
+
           {characters.length == 0 && (
             <View style={styles.containerCharactersChoice}>
               <Text style={styles.textChoiceTitle}>Escolha seu personagem</Text>
@@ -365,6 +384,15 @@ export default function Inventory() {
           </View>
         </View>
       </View>
+      <View>
+        <TouchableOpacity onPress={openModal}>
+          <View>
+            <Text>Open Modal</Text>
+          </View>
+        </TouchableOpacity>
+        {userStats != undefined && <Text>Ataque: {userStats.attackSum}</Text>}
+        {userStats != undefined && <Text>Hp: {userStats.healthSum}</Text>}
+      </View>
       <ScrollView style={styles.containerScrollViewItens}>
         <View style={styles.containerItensChest}>
           {itensInventory.length >= 0 &&
@@ -405,22 +433,12 @@ export default function Inventory() {
           )}
         </View>
       </ScrollView>
-
-      {/* <View style={styles.container3}>
-        <TouchableOpacity
-          onPress={() => signOut()}
-          style={styles.containerFormAcess2}
-        >
-          <Text style={styles.containerFormAcessText}> Sair </Text>
-        </TouchableOpacity>
-      </View> */}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Platform.OS === 'ios' ? 20 : 0,
     flex: 1,
     backgroundColor: '#c2c2c2',
   },

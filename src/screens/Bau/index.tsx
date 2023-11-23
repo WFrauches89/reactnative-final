@@ -13,15 +13,13 @@ import { v4 as uuidv4 } from 'uuid';
 import { getRandomBytes } from 'react-native-get-random-values';
 import { ModalObtainedItem } from '../../components/Modals/ModalObtainedItem';
 import { useAuth } from '../../Context/Auth';
-import { useNavigation } from '@react-navigation/native';
 import Chest from '../../../assets/favicon.png';
 
 export default function Bau() {
   const { signOut } = useAuth();
-  const navigation = useNavigation();
 
   const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
-  const { refreshPage, setRefreshPage } = useAuth();
+  const { setRefreshPage } = useAuth();
   const [obtainedItem, setObtainedItem] = React.useState<any>(null);
 
   React.useEffect(() => {
@@ -69,7 +67,7 @@ export default function Bau() {
           idDoItem: idItemAleatorio,
           rarity: rarityWithProbability,
         });
-        setRefreshPage((r) => !r)
+        setRefreshPage((r) => !r);
       } else {
         alert('Gemas Insuficientes!');
       }
@@ -215,7 +213,6 @@ export default function Bau() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Platform.OS === 'ios' ? 20 : 0,
     flex: 1,
     backgroundColor: '#c2c2c2',
   },

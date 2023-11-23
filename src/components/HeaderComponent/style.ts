@@ -1,19 +1,18 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-viewtext:{
+  viewtext: {
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 2,
     width: 79,
     height: 45,
     borderRadius: 4,
-},
-texttop: {
-    resizeMode: 'contain',
-    color: 'gold'
-},
-textbotton: {
+  },
+  texttop: {
+    color: 'gold',
+  },
+  textbotton: {
     textAlign: 'center',
     width: 75,
     height: 22,
@@ -22,6 +21,6 @@ textbotton: {
     borderBottomLeftRadius: 2,
     borderBottomRightRadius: 2,
     borderTopWidth: 2,
-    paddingTop: 2
-}
-})
+    paddingTop: 2,
+  },
+});

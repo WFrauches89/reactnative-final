@@ -3,7 +3,6 @@ import { Platform, StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   modal: {
     flex: 1,
-    marginTop: Platform.OS === 'ios' ? 20 : 0,
   },
   modalContainer: {
     flex: 1,
