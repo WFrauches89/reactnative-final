@@ -1,12 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import Chest from './assets/favicon.png';
-import api from './src/services/api/api';
+
+import api from '../../services/api/api';
 import { v4 as uuidv4 } from 'uuid';
 import { getRandomBytes } from 'react-native-get-random-values';
-import { ModalObtainedItem } from './src/components/Modals/ModalObtainedItem';
+import { ModalObtainedItem } from '../../components/Modals/ModalObtainedItem';
+import { useAuth } from '../../Context/Auth';
+import { useNavigation } from '@react-navigation/native';
+import Chest from '../../../assets/favicon.png';
 
-export default function App() {
+
+export default function Bau() {
+  const { signOut } = useAuth();
+  const navigation = useNavigation();
+
+
   const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
   const [refresh, setRefresh] = React.useState<boolean>(false);
   const [obtainedItem, setObtainedItem] = React.useState<any>(null);
@@ -178,7 +186,19 @@ export default function App() {
           <Text style={styles.openChestText}>120000 Gems</Text>
           <Text style={styles.openChestText}>R$ 300,00</Text>
         </TouchableOpacity>
+
       </View>
+      <View style={styles.container2}>
+          <TouchableOpacity onPress={() => navigation.navigate('Inventory')} style={styles.containerFormAcess}>
+            <Text style={styles.containerFormAcessText}> Inventory </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.container3}>
+          <TouchableOpacity onPress={() => signOut()} style={styles.containerFormAcess2}>
+            <Text style={styles.containerFormAcessText}> Sair </Text>
+          </TouchableOpacity>
+
+        </View>
       {isModalVisible && (
         <ModalObtainedItem
           obtainedItem={obtainedItem}
@@ -245,5 +265,46 @@ const styles = StyleSheet.create({
   },
   openChestText: {
     textAlign: 'center',
+  },
+  containerFormAcess2: {
+    position: 'absolute',
+    backgroundColor: '#594875',
+    borderRadius: 50,
+    paddingVertical: 8,
+    width: '100%',
+    alignSelf: 'center',
+    bottom: '25%',
+    alignItems: 'center',
+
+
+  },
+  containerFormAcessText: {
+    fontSize: 24,
+    color: '#ffffff',
+    fontWeight: 'bold',
+
+  },
+  container2: {
+    marginTop: 350,
+    flex: 0.2,
+    backgroundColor: '#0c8b1f',
+
+  },
+  container3: {
+    marginTop: 40,
+    flex: 0.2,
+    backgroundColor: '#140c8b',
+
+  }, containerFormAcess: {
+    position: 'absolute',
+    backgroundColor: '#594875',
+    borderRadius: 50,
+    paddingVertical: 8,
+    width: '100%',
+    alignSelf: 'center',
+    bottom: '25%',
+    alignItems: 'center',
+
+
   },
 });

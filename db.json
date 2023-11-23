@@ -8,22 +8,12 @@
       "recursos": {
         "gold": "200000000",
         "energia": "10",
-        "gema": 0
+        "gema": 120400
       },
       "itens": [
         {
-          "id": "5b1ce774-53d2-4291-93b1-d8981c1f1a76",
-          "idDoItem": 4,
-          "rarity": 2
-        },
-        {
           "id": "85fdfe70-b37b-47db-926a-456b0095fbca",
           "idDoItem": 3,
-          "rarity": 1
-        },
-        {
-          "id": "b768cc4e-879a-4d3b-b65b-7b90126e541e",
-          "idDoItem": 6,
           "rarity": 1
         },
         {
@@ -37,11 +27,6 @@
           "rarity": 2
         },
         {
-          "id": "15c95688-fd0c-429f-8c3b-029cd43991ec",
-          "idDoItem": 11,
-          "rarity": 1
-        },
-        {
           "id": "f0481075-8a3c-4030-9c0c-2bd70b853ec7",
           "idDoItem": 3,
           "rarity": 1
@@ -49,11 +34,6 @@
         {
           "id": "0eb0c0bf-8579-4180-bf78-12b138261dd2",
           "idDoItem": 4,
-          "rarity": 3
-        },
-        {
-          "id": "d352212a-e601-4ea6-9479-58723c28f8f8",
-          "idDoItem": 3,
           "rarity": 3
         },
         {
@@ -72,35 +52,83 @@
           "rarity": 1
         },
         {
-          "id": "a9fe25d8-0b50-4fad-9843-2c8ea6f80edc",
-          "idDoItem": 9,
-          "rarity": 3
-        }
-      ],
-      "itensEquipados": [
-        {
-          "type": "ring",
           "id": "23b3e0fc-b6e7-4c61-bc23-eb4002b25e5a",
           "idDoItem": 3,
           "rarity": 2
         },
         {
-          "type": "boots",
           "id": "99cde6fc-36ea-4e7f-92b1-6b600ac7fd6f",
           "idDoItem": 12,
           "rarity": 1
         },
         {
-          "type": "chestplate",
-          "id": "0cd0ef76-d5f7-489a-9771-07f628c7f1e8",
+          "id": "b5c36d64-6e2b-49c4-bf93-3eb1b4529c9a",
+          "idDoItem": 4,
+          "rarity": 1
+        },
+        {
+          "id": "eb8d807a-e666-4b60-aa88-d5a2bc47a156",
+          "idDoItem": 11,
+          "rarity": 3
+        },
+        {
+          "id": "edb3c2f1-b0dc-41d0-bb25-4d8cd0385574",
+          "idDoItem": 11,
+          "rarity": 2
+        },
+        {
+          "id": "12be3b93-ef7b-4f54-a217-e3c3678908da",
+          "idDoItem": 10,
+          "rarity": 1
+        },
+        {
+          "id": "e8a962a4-8251-42fb-86ea-9153138688f4",
           "idDoItem": 9,
           "rarity": 2
         },
+        {
+          "id": "3a1a1483-661b-48dd-bf69-885af99ddd52",
+          "idDoItem": 2,
+          "rarity": 2
+        },
+        {
+          "id": "de853dbc-aa9b-40cc-b269-935686358d20",
+          "idDoItem": 2,
+          "rarity": 3
+        },
+        {
+          "id": "7c2c4302-9c93-4811-bfb8-50eae09e103c",
+          "idDoItem": 9,
+          "rarity": 1
+        },
+        {
+          "id": "1a05772b-1177-4b80-b961-d4e46035ecd4",
+          "idDoItem": 11,
+          "rarity": 3
+        },
+        {
+          "id": "6bba2e56-9048-428e-9024-0cd037c3a217",
+          "idDoItem": 5,
+          "rarity": 2
+        },
+        {
+          "id": "2b6a80a3-c527-4c8d-a783-d6e2906434fd",
+          "idDoItem": 11,
+          "rarity": 3
+        }
+      ],
+      "itensEquipados": [
         {
           "type": "weapon",
           "id": "9167559e-4abd-4ee5-8e1f-c3d0400872b3",
           "idDoItem": 1,
           "rarity": 5
+        },
+        {
+          "type": "helmet",
+          "id": "48f5f1ef-42f6-4cdc-90d8-9b2538866ef5",
+          "idDoItem": 8,
+          "rarity": 2
         },
         {
           "type": "gloves",
@@ -109,10 +137,22 @@
           "rarity": 3
         },
         {
-          "type": "helmet",
-          "id": "48f5f1ef-42f6-4cdc-90d8-9b2538866ef5",
-          "idDoItem": 8,
-          "rarity": 2
+          "type": "chestplate",
+          "id": "a9fe25d8-0b50-4fad-9843-2c8ea6f80edc",
+          "idDoItem": 9,
+          "rarity": 3
+        },
+        {
+          "type": "ring",
+          "id": "d352212a-e601-4ea6-9479-58723c28f8f8",
+          "idDoItem": 3,
+          "rarity": 3
+        },
+        {
+          "type": "boots",
+          "id": "3f0704af-c0fd-4e75-9e26-ad1147e3544c",
+          "idDoItem": 11,
+          "rarity": 1
         }
       ],
       "personagens": [
@@ -133,6 +173,21 @@
           "urlImage": "feiticeiro"
         }
       ]
+    },
+    {
+      "nome": "Array",
+      "email": "array@array.com",
+      "senha": "password",
+      "recursos": {
+        "gold": 0,
+        "energia": 0,
+        "gema": 0
+      },
+      "itens": [],
+      "itensEquipados": [],
+      "personagens": [],
+      "personagemEquipado": [],
+      "id": 2
     }
   ],
   "item": [
