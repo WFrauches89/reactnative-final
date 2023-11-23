@@ -6,9 +6,9 @@
       "email": "email@email.com",
       "senha": "Senha123",
       "recursos": {
-        "gold": "200000000",
+        "gold": "20000",
         "energia": "10",
-        "gema": 117500
+        "gema": 26101
       },
       "itens": [
         {
@@ -125,15 +125,79 @@
           "id": "866a5382-8a1f-404f-b568-b4b609234915",
           "idDoItem": 2,
           "rarity": 1
-        }
-      ],
-      "itensEquipados": [
+        },
         {
-          "type": "weapon",
+          "id": "c0dfcbc1-369f-442f-9a61-ba745da44f74",
+          "idDoItem": 7,
+          "rarity": 3
+        },
+        {
+          "id": "33d3543c-e449-44bd-b0e1-541d7297899d",
+          "idDoItem": 7,
+          "rarity": 2
+        },
+        {
+          "id": "2d554aea-5f66-4bfa-8fe6-495cfad78e35",
+          "idDoItem": 10,
+          "rarity": 2
+        },
+        {
+          "id": "69e7bcf1-ab53-4f3a-adf8-7bef48fbdd47",
+          "idDoItem": 9,
+          "rarity": 3
+        },
+        {
+          "id": "b89eaac7-be37-420d-a93b-43fbf897fede",
+          "idDoItem": 10,
+          "rarity": 2
+        },
+        {
+          "id": "ec56ce46-6c5e-4caf-8c92-80c6b7e6e376",
+          "idDoItem": 11,
+          "rarity": 2
+        },
+        {
+          "id": "097215f4-3d7b-430a-ab4f-8d9c422c5750",
+          "idDoItem": 1,
+          "rarity": 3
+        },
+        {
+          "id": "4fcbfe90-c5f8-490b-97bb-58bd7d654fdc",
+          "idDoItem": 3,
+          "rarity": 4
+        },
+        {
+          "id": "f7707919-3281-4902-8208-834b46d80892",
+          "idDoItem": 5,
+          "rarity": 1
+        },
+        {
+          "id": "e7a55721-b9c2-43aa-8cfe-784dc3b7d4c7",
+          "idDoItem": 3,
+          "rarity": 1
+        },
+        {
+          "id": "e1f16564-676c-4393-9bf2-d1f523904d4f",
+          "idDoItem": 5,
+          "rarity": 1
+        },
+        {
+          "id": "d052ebdd-d0b6-4c09-b721-94373f33445e",
+          "idDoItem": 8,
+          "rarity": 2
+        },
+        {
           "id": "9167559e-4abd-4ee5-8e1f-c3d0400872b3",
           "idDoItem": 1,
           "rarity": 5
         },
+        {
+          "id": "92a7218f-5508-467b-b614-a65c75bcdf23",
+          "idDoItem": 12,
+          "rarity": 1
+        }
+      ],
+      "itensEquipados": [
         {
           "type": "helmet",
           "id": "48f5f1ef-42f6-4cdc-90d8-9b2538866ef5",
@@ -163,6 +227,12 @@
           "id": "3f0704af-c0fd-4e75-9e26-ad1147e3544c",
           "idDoItem": 11,
           "rarity": 1
+        },
+        {
+          "type": "weapon",
+          "id": "e86d14cb-554c-4d9e-8603-a5df6fb3bb66",
+          "idDoItem": 1,
+          "rarity": 4
         }
       ],
       "personagens": [
@@ -181,7 +251,7 @@
           "urlImage": "bruxa"
         }
       ],
-      "personagemEquipado":[
+      "personagemEquipado": [
         {
           "id": "32b3104b-e39b-473b-bd5c-2107e82ce90d",
           "nome": "Feiticeiro",

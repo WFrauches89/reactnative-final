@@ -7,14 +7,14 @@ import api from "../../services/api/api";
 interface recursosprops {
     gold: number;
     energia: number;
-    gemas: number;
+    gema: number;
 }
 
 export default function Header(){
 const[recurso , setrecursos] = React.useState<recursosprops>({
     gold: 0,
     energia: 0,
-    gemas: 0,
+    gema: 0,
 });
 React.useEffect(() => {
     const fetchUserData = async () => {
@@ -27,15 +27,16 @@ React.useEffect(() => {
       }
     };
   
+
     fetchUserData();
-  }, []);
+  }, [recurso]);
 
 return(
     <View style={styles.viewheader}>
         <HeaderComponent titulo="User" nome='kkkk' valor={null}/>
-        <HeaderComponent titulo="Gold" nome='' valor={50000}/>
-        <HeaderComponent titulo="Gemas" nome='' valor={0}/>
-        <HeaderComponent titulo="Energia" nome='' valor={1}/>
+        <HeaderComponent titulo="Gold" nome='' valor={recurso.gold}/>
+        <HeaderComponent titulo="Gemas" nome='' valor={recurso.gema}/>
+        <HeaderComponent titulo="Energia" nome='' valor={recurso.energia}/>
     </View>
 );
 }

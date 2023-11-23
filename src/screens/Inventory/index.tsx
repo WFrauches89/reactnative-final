@@ -16,6 +16,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { getRandomBytes } from 'react-native-get-random-values';
 import images from '../../../assets/images';
 import { ModalChangeCharacters } from '../../components/Modals/ModalChangeCharacter';
+import { useAuth } from '../../Context/Auth';
 
 export default function Inventory() {
   const [isModalCharacterVisible, setIsModalCharacterVisible] =
@@ -23,7 +24,7 @@ export default function Inventory() {
   const openModal = () => {
     setIsModalCharacterVisible(true);
   };
-
+  const { refreshPage, setRefreshPage } = useAuth();
   const [itensBd, setItensBd] = React.useState([]);
   const [itensUsingBd, setItensUsingBd] = React.useState([]);
   const [itensInventory, setItensInventory] = React.useState([]);
@@ -33,7 +34,6 @@ export default function Inventory() {
   const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
   const [isModalVisibleEquipped, setIsModalVisibleEquipped] =
     React.useState<boolean>(false);
-  const [refresh, setRefresh] = React.useState<boolean>(false);
   const [selectedIndex, setSelectedIndex] = React.useState<string>('');
   const [selectedInventoryItem, setSelectedInventoryItem] =
     React.useState<string>('');
@@ -93,7 +93,7 @@ export default function Inventory() {
     getItensUsingBd();
     getCharacters();
     getCharactersUsing();
-  }, [refresh]);
+  }, [refreshPage]);
 
   React.useEffect(() => {
     getItensInventory();
@@ -141,7 +141,7 @@ export default function Inventory() {
     ];
     api.patch(`user/1`, { personagens: character });
     api.patch(`user/1`, { personagemEquipado: character });
-    setRefresh((r) => !r);
+    setRefreshPage((r) => !r);
   };
 
   const getItensUsing = () => {
@@ -381,7 +381,7 @@ export default function Inventory() {
             <ModalItemDetails
               selectedInventoryItem={selectedInventoryItem}
               index={selectedIndex}
-              setRefresh={setRefresh}
+              setRefresh={setRefreshPage}
               inventory={true}
               isModalVisible={isModalVisible}
               setIsModalVisible={setIsModalVisible}
@@ -389,7 +389,7 @@ export default function Inventory() {
           )}
           {isModalVisibleEquipped && (
             <ModalItemDetails
-              setRefresh={setRefresh}
+              setRefresh={setRefreshPage}
               selectedInventoryItem={selectedInventoryItem}
               index={selectedIndex}
               isModalVisible={isModalVisibleEquipped}
@@ -398,7 +398,7 @@ export default function Inventory() {
           )}
           {isModalCharacterVisible && (
             <ModalChangeCharacters
-              setRefresh={setRefresh}
+              setRefresh={setRefreshPage}
               isModalVisible={isModalCharacterVisible}
               setIsModalVisible={setIsModalCharacterVisible}
             />

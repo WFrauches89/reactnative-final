@@ -1,12 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import Login from '../../screens/Login'
-import Inventory from '../../screens/Inventory';
-import Bau from '../../screens/Bau/index.tsx';
 import Welcome from '../../screens/Welcome'
 import Cadastro from '../../screens/Cadastro'
-
-
 
 const Stack = createNativeStackNavigator();
 

@@ -18,6 +18,8 @@ interface AuthContextData {
   authData?: AuthData;
   signOut: () => Promise<void>;
   loading: boolean;
+  refreshPage: any;
+  setRefreshPage: any;
 }
 
 interface AuthProviderProps {
@@ -32,6 +34,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [authData, setAuthData] = useState<AuthData>();
   const [loading, setLoading] = useState(true);
   const [userLogado, setUserLogado] = useState({});
+  const [refreshPage , setRefreshPage] = useState(false);
 
   useEffect(() => {
     loadStorage();
@@ -60,7 +63,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ authData, loading, signOut, logar, setUserLogado }}
+      value={{ authData, loading, signOut, logar, setUserLogado , refreshPage, setRefreshPage }}
     >
       {children}
     </AuthContext.Provider>

@@ -21,7 +21,7 @@ export default function Bau() {
   const navigation = useNavigation();
 
   const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
-  const [refresh, setRefresh] = React.useState<boolean>(false);
+  const { refreshPage, setRefreshPage } = useAuth();
   const [obtainedItem, setObtainedItem] = React.useState<any>(null);
 
   React.useEffect(() => {
@@ -69,6 +69,7 @@ export default function Bau() {
           idDoItem: idItemAleatorio,
           rarity: rarityWithProbability,
         });
+        setRefreshPage((r) => !r)
       } else {
         alert('Gemas Insuficientes!');
       }

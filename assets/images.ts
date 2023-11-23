@@ -8,6 +8,8 @@ const images = {
   feiticeiro: require('../assets/feiticeiro.png'),
   bruxa: require('../assets/bruxa.png'),
   grandMasterHeavySiegeCrossbow: require('../assets/Crossbow.png'),
+  bau: require('../assets/Treasure-Chest-icon.png'),
+  bag: require('../assets/bag.png'),
 };
 
 export default images;

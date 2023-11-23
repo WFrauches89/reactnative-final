@@ -5,8 +5,8 @@ viewheader: {
     flexDirection: "row",
     backgroundColor: 'gray',
     justifyContent: 'space-evenly',
-    height: 70,
-    paddingTop: 20,
+    height: 60,
+    paddingTop: 5,
     borderBottomWidth:2
 },
 })

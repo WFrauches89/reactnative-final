@@ -2,6 +2,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Bau from '../../../screens/Bau';
 import Inventory from '../../../screens/Inventory';
 import React from 'react';
+import images from '../../../../assets/images';
+import { Image } from 'react-native-animatable';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
@@ -14,12 +16,42 @@ export function BottonTagRouts() {
   return (
     <Tab.Navigator
       screenOptions={{
+        tabBarLabelStyle: {
+          fontSize: 15,
+          fontWeight: '500',
+          color: '#FFF'
+        },
+        tabBarStyle:{
+          backgroundColor: '#383838'
+
+        },
+        tabBarActiveBackgroundColor: "#1e1e1e",
         headerShown: false,
       }}
     >
-      <Tab.Screen name="Inventory" component={Inventory} />
+      <Tab.Screen name="Inventory" component={Inventory} 
+      options={{
+        tabBarIcon: () => (
+          <Image
+            source={images.bag}
+            style={{ width: 40, height: 40, marginBottom: 2 }}
+          />
+        ),
+      }}
+      
+      
+      />
 
-      <Tab.Screen name="Bau" component={Bau} />
+      <Tab.Screen name="Bau" component={Bau}
+      options={{
+        tabBarIcon: () => (
+          <Image
+            source={images.bau}
+            style={{ width: 40, height: 40, marginBottom: 2 }}
+          />
+        ),
+      }}
+    />
     </Tab.Navigator>
   );
 }

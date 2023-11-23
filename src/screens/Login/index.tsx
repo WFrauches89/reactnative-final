@@ -18,7 +18,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
         </TouchableOpacity>
       </Animatable.View>
       <Animatable.View animation={'fadeInUp'} delay={500} style={styles.form}>
-        <FlatListTextInput />
+        <FlatListTextInput navigation={navigation} />
       </Animatable.View>
     </View>
   );
