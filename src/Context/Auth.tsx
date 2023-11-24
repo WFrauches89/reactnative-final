@@ -4,8 +4,8 @@ import React, {
   useEffect,
   useState,
   ReactNode,
-} from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export interface AuthData {
   email: string;
@@ -28,7 +28,7 @@ interface AuthProviderProps {
 }
 
 export const AuthContext = createContext<AuthContextData>(
-  {} as AuthContextData
+  {} as AuthContextData,
 );
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
@@ -42,7 +42,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   async function loadStorage() {
-    const auth = await AsyncStorage.getItem("@AuthData");
+    const auth = await AsyncStorage.getItem('@AuthData');
     if (auth) {
       setAuthData(JSON.parse(auth) as AuthData);
       setUserLogado(JSON.parse(auth) as AuthData);
@@ -52,12 +52,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   function logar(data) {
     setAuthData(data);
+    setRefreshPage((r) => !r);
   }
 
   async function signOut(): Promise<void> {
     //logout
     setAuthData(undefined);
-    AsyncStorage.removeItem("@AuthData");
+    AsyncStorage.removeItem('@AuthData');
 
     return;
   }

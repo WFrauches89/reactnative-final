@@ -14,13 +14,14 @@ import api from '../../../services/api/api';
 import { Button } from '../../Button';
 import { useAuth } from '../../../Context/Auth';
 
-interface ModalItemDetailsProps {
+interface ModalItemDetailsFerreiroProps {
   isModalVisible: boolean;
   setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
   setRefresh: React.Dispatch<React.SetStateAction<boolean>>;
   index: string;
   inventory?: boolean;
   selectedInventoryItem: any;
+  setItensUnindo: any;
 }
 
 export interface getItemDetailsResponse {
@@ -32,14 +33,14 @@ export interface getItemDetailsResponse {
   id: number;
 }
 
-export const ModalItemDetails = ({
+export const ModalItemDetailsFerreiro = ({
   isModalVisible,
   setIsModalVisible,
   index,
   setRefresh,
   inventory,
   selectedInventoryItem,
-}: ModalItemDetailsProps) => {
+}: ModalItemDetailsFerreiroProps) => {
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
   const [item, setItem] = React.useState<getItemDetailsResponse>();
   const { userLogado } = useAuth();
@@ -48,81 +49,24 @@ export const ModalItemDetails = ({
     getItemDetails(index);
   }, []);
 
-  const equipItem = async () => {
-    try {
-      if (selectedInventoryItem != null) {
-        console.log(selectedInventoryItem);
-        const response = await api.get(`/user/${userLogado.id}`);
-        const itensInventory = response.data.itens;
-        const itens = response.data.itensEquipados;
+  const equipaItemUnindo = async () => {
+    if (selectedInventoryItem != null) {
+      const response = await api.get(`/user/${userLogado.id}`);
+      const itensUnindo = response.data.itensUnindo;
 
-        const itemEquipado = itens.filter(
-          (i: any) => i.type == selectedInventoryItem.type,
-        );
-
-        const itensFiltrados = itens.filter(
-          (i: any) => i.type !== selectedInventoryItem.type,
-        );
-
-        const itensInventoryFiltrados = itensInventory.filter(
-          (i: any) => i.id !== selectedInventoryItem.idItemUser,
-        );
-
-        const newItemEquipped = {
-          type: selectedInventoryItem.type,
-          id: selectedInventoryItem.idItemUser,
-          idDoItem: selectedInventoryItem.id,
-          rarity: selectedInventoryItem.rarity,
-        };
-
-        itensFiltrados.push(newItemEquipped);
-
-        await api.patch(`/user/${userLogado.id}`, {
-          itensEquipados: itensFiltrados,
-        });
-
-        await api.patch(`/user/${userLogado.id}`, {
-          itens: [...itensInventoryFiltrados, ...itemEquipado],
-        });
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const unEquipItem = async () => {
-    try {
-      if (selectedInventoryItem != null) {
-        const response = await api.get(`/user/${userLogado.id}`);
-        const itensInventory = response.data.itens;
-        const itens = response.data.itensEquipados;
-
-        const itensFiltrados = itens.filter(
-          (i: any) => i.type !== selectedInventoryItem.type,
-        );
-
-        let itemUnequipping = {
-          id: selectedInventoryItem.idItemUser,
-          idDoItem: selectedInventoryItem.id,
-          rarity: selectedInventoryItem.rarity,
-        };
-
-        itensInventory.push(itemUnequipping);
-
+      if (itensUnindo.length < 3) {
         api.patch(`/user/${userLogado.id}`, {
-          itensEquipados: itensFiltrados,
+          itensUnindo: [...itensUnindo, selectedInventoryItem],
         });
-
-        api.patch(`/user/${userLogado.id}`, { itens: itensInventory });
       }
-    } catch (error) {
-      console.error(error);
     }
   };
+
+  const unEquipItem = async () => {};
 
   async function handleButton() {
     if (inventory) {
-      await equipItem();
+      await equipaItemUnindo();
       setRefresh((e) => !e);
       setIsModalVisible(false);
     } else {
@@ -186,7 +130,7 @@ export const ModalItemDetails = ({
                 </View>
               </ScrollView>
               <Button
-                title={inventory ? 'Equip' : 'UnEquip'}
+                title={inventory ? 'Unir' : 'Retirar'}
                 onPress={handleButton}
               />
             </>

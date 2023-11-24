@@ -27,7 +27,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#8b0d99',
+    backgroundColor: '#3d2424e0',
   },
   header: {
     flexDirection: 'row-reverse',
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   form: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: '#202020',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     paddingStart: '5%',

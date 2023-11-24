@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   ScrollView,
   StyleSheet,
@@ -7,16 +7,17 @@ import {
   Image,
   TouchableOpacity,
   Platform,
-} from "react-native";
-import ItemComponent from "../../components/ItemComponent";
-import api from "../../services/api/api";
-import Foto from "../../../assets/favicon.png";
-import { ModalItemDetails } from "../../components/Modals/ModalDetailsItem";
-import { v4 as uuidv4 } from "uuid";
-import { getRandomBytes } from "react-native-get-random-values";
-import images from "../../../assets/images";
-import { ModalChangeCharacters } from "../../components/Modals/ModalChangeCharacter";
-import { useAuth } from "../../Context/Auth";
+} from 'react-native';
+import ItemComponent from '../../components/ItemComponent';
+import api from '../../services/api/api';
+import Foto from '../../../assets/favicon.png';
+import { ModalItemDetails } from '../../components/Modals/ModalDetailsItem';
+import { v4 as uuidv4 } from 'uuid';
+import { getRandomBytes } from 'react-native-get-random-values';
+import images from '../../../assets/images';
+import { ModalChangeCharacters } from '../../components/Modals/ModalChangeCharacter';
+import { useAuth } from '../../Context/Auth';
+import { styles } from './styles';
 
 export default function Inventory() {
   const [isModalCharacterVisible, setIsModalCharacterVisible] =
@@ -38,9 +39,9 @@ export default function Inventory() {
   const [isModalVisible, setIsModalVisible] = React.useState<boolean>(false);
   const [isModalVisibleEquipped, setIsModalVisibleEquipped] =
     React.useState<boolean>(false);
-  const [selectedIndex, setSelectedIndex] = React.useState<string>("");
+  const [selectedIndex, setSelectedIndex] = React.useState<string>('');
   const [selectedInventoryItem, setSelectedInventoryItem] =
-    React.useState<string>("");
+    React.useState<string>('');
 
   const getItens = () => {
     api
@@ -111,14 +112,14 @@ export default function Inventory() {
     if (itensEquipped.length > 0) {
       const sumAttackHealth = itensEquipped.reduce(
         (accumulator, currentValue) => {
-          if (["weapon", "ring", "gloves"].includes(currentValue.type)) {
+          if (['weapon', 'ring', 'gloves'].includes(currentValue.type)) {
             accumulator.attackSum += currentValue.stats * currentValue.rarity;
           } else {
             accumulator.healthSum += currentValue.stats * currentValue.rarity;
           }
           return accumulator;
         },
-        { attackSum: 0, healthSum: 0 }
+        { attackSum: 0, healthSum: 0 },
       );
       sumAttackHealth.attackSum += characterUsing[0].attack;
       sumAttackHealth.healthSum += characterUsing[0].health;
@@ -150,16 +151,18 @@ export default function Inventory() {
   };
 
   const firstCharacterChoice = (gender: number) => {
-    const id = uuidv4({ random: getRandomBytes });
     let nomeCharacter: string;
     let urlImageCharacter: string;
+    let id: number;
 
     if (gender == 1) {
-      nomeCharacter = "Espectro";
-      urlImageCharacter = "feiticeiro";
+      id = 10;
+      nomeCharacter = 'Espectro';
+      urlImageCharacter = 'feiticeiro';
     } else {
-      nomeCharacter = "Bruxa";
-      urlImageCharacter = "bruxa";
+      id = 11;
+      nomeCharacter = 'Bruxa';
+      urlImageCharacter = 'bruxa';
     }
 
     const character = [
@@ -197,7 +200,7 @@ export default function Inventory() {
             {itensEquipped.length >= 0 &&
               itensEquipped
                 .filter((i) => {
-                  return i.type == "weapon";
+                  return i.type == 'weapon';
                 })
                 .map((i) => (
                   <ItemComponent
@@ -209,22 +212,22 @@ export default function Inventory() {
                   />
                 ))
                 .concat(
-                  itensEquipped.some((i) => i.type === "weapon") ? (
+                  itensEquipped.some((i) => i.type === 'weapon') ? (
                     []
                   ) : (
                     <Image
-                      key={"a"}
+                      key={'a'}
                       style={styles.imageItemDefault}
                       source={images.weapon_default}
                     />
-                  )
+                  ),
                 )}
           </View>
           <View style={styles.containerItem}>
             {itensEquipped.length >= 0 &&
               itensEquipped
                 .filter((i) => {
-                  return i.type == "ring";
+                  return i.type == 'ring';
                 })
                 .map((i) => (
                   <ItemComponent
@@ -236,22 +239,22 @@ export default function Inventory() {
                   />
                 ))
                 .concat(
-                  itensEquipped.some((i) => i.type === "ring") ? (
+                  itensEquipped.some((i) => i.type === 'ring') ? (
                     []
                   ) : (
                     <Image
-                      key={"b"}
+                      key={'b'}
                       style={styles.imageItemDefault}
                       source={images.ring_default}
                     />
-                  )
+                  ),
                 )}
           </View>
           <View style={styles.containerItem}>
             {itensEquipped.length >= 0 &&
               itensEquipped
                 .filter((i) => {
-                  return i.type == "gloves";
+                  return i.type == 'gloves';
                 })
                 .map((i) => (
                   <ItemComponent
@@ -263,15 +266,15 @@ export default function Inventory() {
                   />
                 ))
                 .concat(
-                  itensEquipped.some((i) => i.type === "gloves") ? (
+                  itensEquipped.some((i) => i.type === 'gloves') ? (
                     []
                   ) : (
                     <Image
-                      key={"c"}
+                      key={'c'}
                       style={styles.imageItemDefault}
                       source={images.gloves_default}
                     />
-                  )
+                  ),
                 )}
           </View>
         </View>
@@ -316,7 +319,7 @@ export default function Inventory() {
             {itensEquipped.length >= 0 &&
               itensEquipped
                 .filter((i) => {
-                  return i.type == "helmet";
+                  return i.type == 'helmet';
                 })
                 .map((i) => (
                   <ItemComponent
@@ -328,22 +331,22 @@ export default function Inventory() {
                   />
                 ))
                 .concat(
-                  itensEquipped.some((i) => i.type === "helmet") ? (
+                  itensEquipped.some((i) => i.type === 'helmet') ? (
                     []
                   ) : (
                     <Image
-                      key={"d"}
+                      key={'d'}
                       style={styles.imageItemDefault}
                       source={images.helm_default}
                     />
-                  )
+                  ),
                 )}
           </View>
           <View style={styles.containerItem}>
             {itensEquipped.length >= 0 &&
               itensEquipped
                 .filter((i) => {
-                  return i.type == "chestplate";
+                  return i.type == 'chestplate';
                 })
                 .map((i) => (
                   <ItemComponent
@@ -355,21 +358,21 @@ export default function Inventory() {
                   />
                 ))
                 .concat(
-                  itensEquipped.some((i) => i.type === "chestplate") ? (
+                  itensEquipped.some((i) => i.type === 'chestplate') ? (
                     []
                   ) : (
                     <Image
-                      key={"e"}
+                      key={'e'}
                       style={styles.imageItemDefault}
                       source={images.chest_default}
                     />
-                  )
+                  ),
                 )}
           </View>
           <View style={styles.containerItem}>
             {itensEquipped.length >= 0 &&
               itensEquipped
-                .filter((i) => i.type == "boots")
+                .filter((i) => i.type == 'boots')
                 .map((i) => (
                   <ItemComponent
                     setSelectedInventoryItem={setSelectedInventoryItem}
@@ -380,15 +383,15 @@ export default function Inventory() {
                   />
                 ))
                 .concat(
-                  itensEquipped.some((i) => i.type === "boots") ? (
+                  itensEquipped.some((i) => i.type === 'boots') ? (
                     []
                   ) : (
                     <Image
-                      key={"f"}
+                      key={'f'}
                       style={styles.imageItemDefault}
                       source={images.boots_default}
                     />
-                  )
+                  ),
                 )}
           </View>
         </View>
@@ -454,153 +457,3 @@ export default function Inventory() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#3d2424e0",
-    // backgroundColor: "#271a1aef",
-  },
-  containerSpaceB: {
-    justifyContent: "space-between",
-    flexDirection: "row",
-    paddingHorizontal: 20,
-    marginTop: 20,
-  },
-  containerItem: {
-    backgroundColor: "#727272",
-    alignSelf: "flex-start",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 10,
-    borderWidth: 2,
-    borderColor: "#fff",
-    borderRadius: 8,
-    height: 60,
-    width: 60,
-  },
-  containerCharactersChoice: {
-    backgroundColor: "black",
-    flex: 1,
-    width: 150,
-    margin: 10,
-    padding: 15,
-  },
-  containerCharacter: {
-    flex: 1,
-  },
-  characterImage: {
-    width: 200,
-    height: 215,
-    resizeMode: "contain",
-  },
-  textChoiceTitle: {
-    color: "white",
-    flex: 1,
-    fontSize: 16,
-    textAlign: "center",
-  },
-  containerChoiceButtons: {
-    // flexDirection: "row",
-    gap: 10,
-    justifyContent: "center",
-    alignContent: "center",
-    alignItems: "center",
-  },
-  containerChoiceButton: {
-    backgroundColor: "red",
-    padding: 4,
-  },
-  textChoiceButton: {
-    color: "white",
-  },
-  containerInventoryItens: {
-    backgroundColor: "#202020",
-    marginTop: 20,
-    flex: 2,
-    paddingVertical: 20,
-    borderWidth: 2,
-    marginHorizontal: 20,
-    marginBottom: 20,
-  },
-  containerScrollViewItens: {
-    backgroundColor: "#202020",
-    flex: 1,
-    // marginTop: 20,
-  },
-  containerItensChest: {
-    flexDirection: "row",
-    justifyContent: "center",
-    flexWrap: "wrap",
-    gap: 13,
-  },
-  imageItemDefault: {
-    width: 50,
-    height: 50,
-    resizeMode: "contain",
-  },
-  container2: {
-    flex: 0.1,
-    backgroundColor: "#0c8b1f",
-    marginTop: 25,
-  },
-  container3: {
-    flex: 0.1,
-    backgroundColor: "#140c8b",
-  },
-  containerFormAcess: {
-    position: "absolute",
-    backgroundColor: "#594875",
-    borderRadius: 50,
-    paddingVertical: 8,
-    width: "100%",
-    alignSelf: "center",
-    bottom: "25%",
-    alignItems: "center",
-  },
-  containerFormAcess2: {
-    position: "absolute",
-    backgroundColor: "#594875",
-    borderRadius: 50,
-    paddingVertical: 8,
-    width: "100%",
-    alignSelf: "center",
-    bottom: "25%",
-    alignItems: "center",
-  },
-  containerFormAcessText: {
-    fontSize: 24,
-    color: "#ffffff",
-    fontWeight: "bold",
-  },
-  containerStats: {
-    justifyContent: "space-between",
-    flexDirection: "row",
-    paddingHorizontal: 20,
-    marginTop: 5,
-    alignItems: "center",
-  },
-  buttonCharacter: {
-    backgroundColor: "#2B2B2B",
-    padding: 4,
-    borderRadius: 4,
-    marginLeft: -5,
-    borderWidth: 1,
-    borderColor: "grey",
-  },
-  buttonCharacterText: {
-    color: "#ffffff",
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-  statsText: {
-    color: "#ffffff",
-    fontSize: 12,
-    fontWeight: "bold",
-    backgroundColor: "black",
-    padding: 6,
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: "grey",
-  },
-});

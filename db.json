@@ -8,84 +8,13 @@
       "recursos": {
         "gold": "0",
         "energia": "10",
-        "gema": 98300
+        "gema": 0
       },
-      "itens": [
-        {
-          "id": "8493bc13-3c8a-4aa0-9c4b-e52e4eb53717",
-          "idDoItem": 47,
-          "rarity": 1
-        },
-        {
-          "id": "ae076daf-69ef-458a-b9fb-5eb68ca6a9bf",
-          "idDoItem": 41,
-          "rarity": 2
-        },
-        {
-          "id": "de53505b-d455-4be3-b5f2-0c49b12cd71b",
-          "idDoItem": 52,
-          "rarity": 2
-        },
-        {
-          "id": "38fa946c-3c9e-4be6-a523-03277f9d2c2c",
-          "idDoItem": 19,
-          "rarity": 2
-        },
-        {
-          "id": "10fa4087-8812-4726-bfa9-7b270371a305",
-          "idDoItem": 30,
-          "rarity": 1
-        },
-        {
-          "id": "4933ff3a-70d4-4cf8-857e-4b4de7642ed8",
-          "idDoItem": 4,
-          "rarity": 1
-        }
-      ],
-      "itensEquipados": [
-        {
-          "type": "boots",
-          "id": "063dc7a0-046f-42cc-b062-cd1a09e805d1",
-          "idDoItem": 51,
-          "rarity": 4
-        },
-        {
-          "type": "helmet",
-          "id": "ad7e3e7c-bba0-4d39-8010-750a43a4cc9c",
-          "idDoItem": 11,
-          "rarity": 1
-        },
-        {
-          "type": "ring",
-          "id": "457f7ed4-c192-4097-99fb-7bfe48b0677e",
-          "idDoItem": 48,
-          "rarity": 3
-        },
-        {
-          "type": "gloves",
-          "id": "514ef514-69dd-4334-bc08-a9de2f672642",
-          "idDoItem": 34,
-          "rarity": 1
-        }
-      ],
-      "personagens": [
-        {
-          "id": "f97ec417-a428-4ce3-b7ca-41e6728ed737",
-          "nome": "Espectro",
-          "attack": 2000,
-          "health": 1000,
-          "urlImage": "feiticeiro"
-        }
-      ],
-      "personagemEquipado": [
-        {
-          "id": "f97ec417-a428-4ce3-b7ca-41e6728ed737",
-          "nome": "Espectro",
-          "attack": 2000,
-          "health": 1000,
-          "urlImage": "feiticeiro"
-        }
-      ]
+      "itens": [],
+      "itensEquipados": [],
+      "personagens": [],
+      "personagemEquipado": [],
+      "itensUnindo": []
     },
     {
       "nome": "Array",

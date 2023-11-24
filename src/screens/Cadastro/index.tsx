@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import FlatListTextInputCad from '../../components/FlatListTextInputCad/index';
 import { Props } from '../../@types/typePropsNavigationScreens';
+import { styles } from './styles';
 
 const Cadastro: React.FC<Props> = ({ navigation }) => {
   return (
@@ -23,33 +24,5 @@ const Cadastro: React.FC<Props> = ({ navigation }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#8b0d99',
-  },
-  header: {
-    flexDirection: 'row-reverse',
-    justifyContent: 'space-between',
-    marginTop: '15%',
-    marginBottom: '7%',
-    paddingStart: '7%',
-    paddingEnd: '7%',
-  },
-  headerText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#97900e',
-  },
-  form: {
-    flex: 1,
-    backgroundColor: '#000',
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
-    paddingStart: '5%',
-    paddingEnd: '5%',
-  },
-});
 
 export default Cadastro;
