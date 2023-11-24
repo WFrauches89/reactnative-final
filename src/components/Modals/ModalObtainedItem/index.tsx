@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   Modal,
@@ -6,17 +6,20 @@ import {
   ActivityIndicator,
   TouchableOpacity,
   Image,
-} from 'react-native';
-import { styles } from './styles';
-import api from '../../../services/api/api';
-import ItemComponentBuy from '../../ItemComponentBuy';
-import ChestGif from '../../../../assets/bauWood.gif';
-import ChestOpen from '../../../../assets/bauOpen.png';
+} from "react-native";
+import { styles } from "./styles";
+import api from "../../../services/api/api";
+import ItemComponentBuy from "../../ItemComponentBuy";
+import ChestGif from "../../../../assets/bauWood.gif";
+import ChestGif2 from "../../../../assets/bauRuby.gif";
+import ChestOpen from "../../../../assets/bauOpen.png";
+import ChestOpen2 from "../../../../assets/bauOpen2.png";
 
 interface ModalItemDetailsProps {
   isModalVisible: boolean;
   setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
   obtainedItem: any;
+  bauType: any;
 }
 
 export interface getItemDetailsResponse {
@@ -32,6 +35,7 @@ export const ModalObtainedItem = ({
   isModalVisible,
   setIsModalVisible,
   obtainedItem,
+  bauType,
 }: ModalItemDetailsProps) => {
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
   const [item, setItem] = React.useState<getItemDetailsResponse>();
@@ -80,7 +84,7 @@ export const ModalObtainedItem = ({
             onPress={() => setIsModalVisible(false)}
           >
             {isLoading ? (
-              <ActivityIndicator size={'large'} />
+              <ActivityIndicator size={"large"} />
             ) : (
               <>
                 <View style={styles.containerContent}>
@@ -102,11 +106,21 @@ export const ModalObtainedItem = ({
                         <View style={styles.loadingItemContainer}></View>
                       )}
                       <View>
-                        {finishedTimeout ? (
-                          <Image style={styles.chestGif} source={ChestOpen} />
-                        ) : (
-                          <Image style={styles.chestGif} source={ChestGif} />
-                        )}
+                        {bauType == 1 &&
+                          (finishedTimeout ? (
+                            <Image style={styles.chestGif} source={ChestOpen} />
+                          ) : (
+                            <Image style={styles.chestGif} source={ChestGif} />
+                          ))}
+                        {bauType == 2 &&
+                          (finishedTimeout ? (
+                            <Image
+                              style={styles.chestGif}
+                              source={ChestOpen2}
+                            />
+                          ) : (
+                            <Image style={styles.chestGif} source={ChestGif2} />
+                          ))}
                       </View>
                       {finishedTimeout && (
                         <Text style={styles.titleContinue}>

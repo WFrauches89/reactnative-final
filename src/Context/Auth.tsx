@@ -4,8 +4,8 @@ import React, {
   useEffect,
   useState,
   ReactNode,
-} from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+} from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export interface AuthData {
   email: string;
@@ -20,6 +20,7 @@ interface AuthContextData {
   loading: boolean;
   refreshPage: any;
   setRefreshPage: any;
+  userLogado: any;
 }
 
 interface AuthProviderProps {
@@ -27,21 +28,21 @@ interface AuthProviderProps {
 }
 
 export const AuthContext = createContext<AuthContextData>(
-  {} as AuthContextData,
+  {} as AuthContextData
 );
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [authData, setAuthData] = useState<AuthData>();
   const [loading, setLoading] = useState(true);
   const [userLogado, setUserLogado] = useState({});
-  const [refreshPage , setRefreshPage] = useState(false);
+  const [refreshPage, setRefreshPage] = useState(false);
 
   useEffect(() => {
     loadStorage();
   }, []);
 
   async function loadStorage() {
-    const auth = await AsyncStorage.getItem('@AuthData');
+    const auth = await AsyncStorage.getItem("@AuthData");
     if (auth) {
       setAuthData(JSON.parse(auth) as AuthData);
       setUserLogado(JSON.parse(auth) as AuthData);
@@ -56,14 +57,23 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   async function signOut(): Promise<void> {
     //logout
     setAuthData(undefined);
-    AsyncStorage.removeItem('@AuthData');
+    AsyncStorage.removeItem("@AuthData");
 
     return;
   }
 
   return (
     <AuthContext.Provider
-      value={{ authData, loading, signOut, logar, setUserLogado , refreshPage, setRefreshPage }}
+      value={{
+        authData,
+        loading,
+        signOut,
+        logar,
+        setUserLogado,
+        refreshPage,
+        setRefreshPage,
+        userLogado,
+      }}
     >
       {children}
     </AuthContext.Provider>

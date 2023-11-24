@@ -66,22 +66,21 @@ export const styles = StyleSheet.create({
     width: '100%',
   },
   viewcharacter: {
-    width: '100%',
     alignItems: 'center',
-    
+    alignSelf: 'center',
   },
   characterimg: {
     maxWidth: '100%',
-    alignContent:'space-between',
     resizeMode:'contain'
   },
   viewinfo: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: 230,
     backgroundColor: 'gray',
     padding: 5,
     borderRadius: 5,
+    alignSelf: 'center',
+    gap: 30,
   },
   characterinfo: {
     color: '#fff',

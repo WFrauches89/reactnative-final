@@ -6,253 +6,84 @@
       "email": "email@email.com",
       "senha": "Senha123",
       "recursos": {
-        "gold": "20000",
+        "gold": "0",
         "energia": "10",
-        "gema": 12701
+        "gema": 98300
       },
       "itens": [
         {
-          "id": "85fdfe70-b37b-47db-926a-456b0095fbca",
-          "idDoItem": 3,
+          "id": "8493bc13-3c8a-4aa0-9c4b-e52e4eb53717",
+          "idDoItem": 47,
           "rarity": 1
         },
         {
-          "id": "055b4dc6-d18a-4859-944c-724880e8058c",
-          "idDoItem": 6,
+          "id": "ae076daf-69ef-458a-b9fb-5eb68ca6a9bf",
+          "idDoItem": 41,
           "rarity": 2
         },
         {
-          "id": "db49e4a8-9952-482a-be1c-228e78d0e1dd",
-          "idDoItem": 5,
+          "id": "de53505b-d455-4be3-b5f2-0c49b12cd71b",
+          "idDoItem": 52,
           "rarity": 2
         },
         {
-          "id": "8ac9d0cd-5c11-4ef9-9d0a-d805f9c301df",
-          "idDoItem": 8,
+          "id": "38fa946c-3c9e-4be6-a523-03277f9d2c2c",
+          "idDoItem": 19,
+          "rarity": 2
+        },
+        {
+          "id": "10fa4087-8812-4726-bfa9-7b270371a305",
+          "idDoItem": 30,
           "rarity": 1
         },
         {
-          "id": "23b3e0fc-b6e7-4c61-bc23-eb4002b25e5a",
-          "idDoItem": 3,
-          "rarity": 2
-        },
-        {
-          "id": "99cde6fc-36ea-4e7f-92b1-6b600ac7fd6f",
-          "idDoItem": 12,
-          "rarity": 1
-        },
-        {
-          "id": "b5c36d64-6e2b-49c4-bf93-3eb1b4529c9a",
+          "id": "4933ff3a-70d4-4cf8-857e-4b4de7642ed8",
           "idDoItem": 4,
           "rarity": 1
-        },
-        {
-          "id": "eb8d807a-e666-4b60-aa88-d5a2bc47a156",
-          "idDoItem": 11,
-          "rarity": 3
-        },
-        {
-          "id": "edb3c2f1-b0dc-41d0-bb25-4d8cd0385574",
-          "idDoItem": 11,
-          "rarity": 2
-        },
-        {
-          "id": "12be3b93-ef7b-4f54-a217-e3c3678908da",
-          "idDoItem": 10,
-          "rarity": 1
-        },
-        {
-          "id": "e8a962a4-8251-42fb-86ea-9153138688f4",
-          "idDoItem": 9,
-          "rarity": 2
-        },
-        {
-          "id": "de853dbc-aa9b-40cc-b269-935686358d20",
-          "idDoItem": 2,
-          "rarity": 3
-        },
-        {
-          "id": "7c2c4302-9c93-4811-bfb8-50eae09e103c",
-          "idDoItem": 9,
-          "rarity": 1
-        },
-        {
-          "id": "1a05772b-1177-4b80-b961-d4e46035ecd4",
-          "idDoItem": 11,
-          "rarity": 3
-        },
-        {
-          "id": "6bba2e56-9048-428e-9024-0cd037c3a217",
-          "idDoItem": 5,
-          "rarity": 2
-        },
-        {
-          "id": "2b6a80a3-c527-4c8d-a783-d6e2906434fd",
-          "idDoItem": 11,
-          "rarity": 3
-        },
-        {
-          "id": "ba50ed8b-c552-4868-8b64-f12701bf3d8f",
-          "idDoItem": 7,
-          "rarity": 1
-        },
-        {
-          "id": "866a5382-8a1f-404f-b568-b4b609234915",
-          "idDoItem": 2,
-          "rarity": 1
-        },
-        {
-          "id": "c0dfcbc1-369f-442f-9a61-ba745da44f74",
-          "idDoItem": 7,
-          "rarity": 3
-        },
-        {
-          "id": "33d3543c-e449-44bd-b0e1-541d7297899d",
-          "idDoItem": 7,
-          "rarity": 2
-        },
-        {
-          "id": "2d554aea-5f66-4bfa-8fe6-495cfad78e35",
-          "idDoItem": 10,
-          "rarity": 2
-        },
-        {
-          "id": "69e7bcf1-ab53-4f3a-adf8-7bef48fbdd47",
-          "idDoItem": 9,
-          "rarity": 3
-        },
-        {
-          "id": "b89eaac7-be37-420d-a93b-43fbf897fede",
-          "idDoItem": 10,
-          "rarity": 2
-        },
-        {
-          "id": "ec56ce46-6c5e-4caf-8c92-80c6b7e6e376",
-          "idDoItem": 11,
-          "rarity": 2
-        },
-        {
-          "id": "4fcbfe90-c5f8-490b-97bb-58bd7d654fdc",
-          "idDoItem": 3,
-          "rarity": 4
-        },
-        {
-          "id": "f7707919-3281-4902-8208-834b46d80892",
-          "idDoItem": 5,
-          "rarity": 1
-        },
-        {
-          "id": "e7a55721-b9c2-43aa-8cfe-784dc3b7d4c7",
-          "idDoItem": 3,
-          "rarity": 1
-        },
-        {
-          "id": "e1f16564-676c-4393-9bf2-d1f523904d4f",
-          "idDoItem": 5,
-          "rarity": 1
-        },
-        {
-          "id": "d052ebdd-d0b6-4c09-b721-94373f33445e",
-          "idDoItem": 8,
-          "rarity": 2
-        },
-        {
-          "id": "92a7218f-5508-467b-b614-a65c75bcdf23",
-          "idDoItem": 12,
-          "rarity": 1
-        },
-        {
-          "id": "cafb535e-9f0f-4cb8-9208-782061124054",
-          "idDoItem": 10,
-          "rarity": 2
-        },
-        {
-          "id": "5c1f6f1e-b5b3-4a3a-9d39-2e88f588cf43",
-          "idDoItem": 12,
-          "rarity": 1
-        },
-        {
-          "id": "8029afb5-5097-4ee8-be0e-3519390bc370",
-          "idDoItem": 3,
-          "rarity": 2
-        },
-        {
-          "id": "d7177aaf-4341-480d-b995-8df0c6e41b62",
-          "idDoItem": 7,
-          "rarity": 2
-        },
-        {
-          "id": "a69a9aad-9a57-42e6-80e5-4b77af44a7fe",
-          "idDoItem": 7,
-          "rarity": 2
-        },
-        {
-          "id": "61b46d92-157b-45a7-a9df-83bb5eabd4ee",
-          "idDoItem": 11,
-          "rarity": 2
         }
       ],
       "itensEquipados": [
         {
-          "type": "helmet",
-          "id": "48f5f1ef-42f6-4cdc-90d8-9b2538866ef5",
-          "idDoItem": 8,
-          "rarity": 2
-        },
-        {
-          "type": "gloves",
-          "id": "c599716f-5b2e-4859-9396-563ca93d43de",
-          "idDoItem": 6,
-          "rarity": 3
-        },
-        {
           "type": "boots",
-          "id": "3f0704af-c0fd-4e75-9e26-ad1147e3544c",
+          "id": "063dc7a0-046f-42cc-b062-cd1a09e805d1",
+          "idDoItem": 51,
+          "rarity": 4
+        },
+        {
+          "type": "helmet",
+          "id": "ad7e3e7c-bba0-4d39-8010-750a43a4cc9c",
           "idDoItem": 11,
           "rarity": 1
         },
         {
-          "type": "chestplate",
-          "id": "67635c0f-b594-463a-bf8c-06c9eb67197e",
-          "idDoItem": 9,
-          "rarity": 2
-        },
-        {
-          "type": "weapon",
-          "id": "9167559e-4abd-4ee5-8e1f-c3d0400872b3",
-          "idDoItem": 1,
-          "rarity": 5
-        },
-        {
           "type": "ring",
-          "id": "0eb0c0bf-8579-4180-bf78-12b138261dd2",
-          "idDoItem": 4,
+          "id": "457f7ed4-c192-4097-99fb-7bfe48b0677e",
+          "idDoItem": 48,
           "rarity": 3
+        },
+        {
+          "type": "gloves",
+          "id": "514ef514-69dd-4334-bc08-a9de2f672642",
+          "idDoItem": 34,
+          "rarity": 1
         }
       ],
       "personagens": [
         {
-          "id": "32b3104b-e39b-473b-bd5c-2107e82ce90d",
-          "nome": "Feiticeiro",
+          "id": "f97ec417-a428-4ce3-b7ca-41e6728ed737",
+          "nome": "Espectro",
           "attack": 2000,
           "health": 1000,
           "urlImage": "feiticeiro"
-        },
-        {
-          "id": "22b3104b-e39b-473b-bd5c-2107e82ce90d",
-          "nome": "Bruxa",
-          "attack": 2000,
-          "health": 1000,
-          "urlImage": "bruxa"
         }
       ],
       "personagemEquipado": [
         {
-          "id": "22b3104b-e39b-473b-bd5c-2107e82ce90d",
-          "nome": "Bruxa",
+          "id": "f97ec417-a428-4ce3-b7ca-41e6728ed737",
+          "nome": "Espectro",
           "attack": 2000,
           "health": 1000,
-          "urlImage": "bruxa"
+          "urlImage": "feiticeiro"
         }
       ]
     },
@@ -274,100 +105,563 @@
   ],
   "item": [
     {
-      "nome": "Kunai",
-      "desc": "A arma dos ninjas",
-      "urlImage": "grandMasterHeavySiegeCrossbow",
+      "nome": "Adaga do código trainee",
+      "desc": "Adaga para uso dos estudantes ou recém chegados",
+      "urlImage": "weapon_level1",
       "type": "weapon",
       "stats": 20,
       "id": 1
     },
     {
-      "nome": "Katana",
-      "desc": "Espada Janoponesa",
-      "urlImage": "weapon",
+      "nome": "Adaga do código Júnior",
+      "desc": "feito em linguagem simples com toques de requinte ",
+      "urlImage": "weapon_level2",
       "type": "weapon",
       "stats": 20,
       "id": 2
     },
     {
-      "nome": "Dragon Ring",
-      "desc": "Anel com os poderes do dragão",
-      "urlImage": "ring",
-      "type": "ring",
+      "nome": "Machado do código Pleno",
+      "desc": "Machado para os programadores que têm obtido destaque em Java, C# e Python",
+      "urlImage": "weapon_level3",
+      "type": "weapon",
       "stats": 20,
       "id": 3
     },
     {
-      "nome": "Diamond Ring",
-      "desc": "Anel com preço inestimavel",
-      "urlImage": "ring",
-      "type": "ring",
+      "nome": "Machado do código Senior",
+      "desc": "Machado para o uso especial de programadores especializados em React-Native e typescript",
+      "urlImage": "weapon_level4",
+      "type": "weapon",
       "stats": 20,
       "id": 4
     },
     {
-      "nome": "Luvas do Lutador",
-      "desc": "Uma luva feita e usados por lendarios lutadores",
-      "urlImage": "gloves",
-      "type": "gloves",
+      "nome": "Arco do código FullStack",
+      "desc": "Arco para o uso exclusivo dos programadores FullStack",
+      "urlImage": "weapon_level5",
+      "type": "weapon",
       "stats": 20,
       "id": 5
     },
     {
-      "nome": "Luva do Vazio",
-      "desc": "Luva com poderes do vazio",
-      "urlImage": "gloves",
-      "type": "gloves",
+      "nome": "Martelo do código Master",
+      "desc": "Martelo de guerra dos desenvolvedores do GTA VI",
+      "urlImage": "weapon_level6",
+      "type": "weapon",
       "stats": 20,
       "id": 6
     },
     {
-      "nome": "Dragon Helmet",
-      "desc": "Capacete de dragão",
-      "urlImage": "helmet",
-      "type": "helmet",
+      "nome": "Martelo de guerra do código Supremo",
+      "desc": "Martelo de guerra dos desenvolvedores que não usam StackOverflow e ChatGPT",
+      "urlImage": "weapon_level7",
+      "type": "weapon",
       "stats": 20,
       "id": 7
     },
     {
-      "nome": "Gold Helmet",
-      "desc": "Capacete de ouro",
-      "urlImage": "helmet",
-      "type": "helmet",
+      "nome": "Espada do alinhamento perfeito",
+      "desc": "Espada daqueles que conseguem alinhar uma DIV",
+      "urlImage": "weapon_level8",
+      "type": "weapon",
       "stats": 20,
       "id": 8
     },
     {
-      "nome": "Dragon Chestplate",
-      "desc": "Armadura de dragão",
-      "urlImage": "chestplate",
-      "type": "chestplate",
+      "nome": "Cajado da fuga impossível",
+      "desc": "Cajado de raridade ímpar, usado por aqueles que conseguiram sair da Matrix ",
+      "urlImage": "weapon_level9",
+      "type": "weapon",
       "stats": 20,
       "id": 9
     },
     {
-      "nome": "Silver Chestplate",
-      "desc": "Armadura de prata",
-      "urlImage": "chestplate",
-      "type": "chestplate",
+      "nome": "Cajado do Mago Fred",
+      "desc": "Esse item dispensa comentários. Assim como o seu portardor",
+      "urlImage": "weapon_level10",
+      "type": "weapon",
       "stats": 20,
       "id": 10
     },
     {
-      "nome": "Steel Boots",
-      "desc": "Botas de aço",
-      "urlImage": "boots",
-      "type": "boots",
+      "nome": "Elmo do código trainee",
+      "desc": "Elmo para uso dos estudantes ou recém chegados",
+      "urlImage": "helm_level1",
+      "type": "helmet",
       "stats": 20,
       "id": 11
     },
     {
-      "nome": "Fire Boots",
-      "desc": "Botas de fogo",
-      "urlImage": "boots",
-      "type": "boots",
+      "nome": "Elmo do código Júnior",
+      "desc": "Elmo feito em linguagem simples com toques de requinte ",
+      "urlImage": "helm_level2",
+      "type": "helmet",
       "stats": 20,
       "id": 12
+    },
+    {
+      "nome": "Elmo do código Pleno",
+      "desc": "Elmo para os programadores que têm obtido destaque em Java, C# e Python",
+      "urlImage": "helm_level3",
+      "type": "helmet",
+      "stats": 20,
+      "id": 13
+    },
+    {
+      "nome": "Elmo do código Senior",
+      "desc": "Elmo para o uso especial de programadores especializados em React-Native e typescript",
+      "urlImage": "helm_level4",
+      "type": "helmet",
+      "stats": 20,
+      "id": 14
+    },
+    {
+      "nome": "Elmo do código FullStack",
+      "desc": "Elmo para o uso exclusivo dos programadores FullStack",
+      "urlImage": "helm_level5",
+      "type": "helmet",
+      "stats": 20,
+      "id": 15
+    },
+    {
+      "nome": "Elmo do código Master",
+      "desc": "Elmo dos desenvolvedores do GTA VI",
+      "urlImage": "helm_level6",
+      "type": "helmet",
+      "stats": 20,
+      "id": 16
+    },
+    {
+      "nome": "Elmo de guerra do código Supremo",
+      "desc": "Elmo dos desenvolvedores que não usam StackOverflow e ChatGPT",
+      "urlImage": "helm_level7",
+      "type": "helmet",
+      "stats": 20,
+      "id": 17
+    },
+    {
+      "nome": "Elmo do alinhamento perfeito",
+      "desc": "Elmo daqueles que conseguem alinhar uma DIV",
+      "urlImage": "helm_level8",
+      "type": "helmet",
+      "stats": 20,
+      "id": 18
+    },
+    {
+      "nome": "Elmo da fuga impossível",
+      "desc": "Elmo de raridade ímpar, usado por aqueles que conseguiram sair da Matrix ",
+      "urlImage": "helm_level9",
+      "type": "helmet",
+      "stats": 20,
+      "id": 19
+    },
+    {
+      "nome": "Elmo do Mago Fred",
+      "desc": "Esse item dispensa comentários. Assim como o seu portardor",
+      "urlImage": "helm_level10",
+      "type": "helmet",
+      "stats": 20,
+      "id": 20
+    },
+    {
+      "nome": "Armadura do código trainee",
+      "desc": "Armadura para uso dos estudantes ou recém chegados",
+      "urlImage": "chest_level1",
+      "type": "chestplate",
+      "stats": 20,
+      "id": 21
+    },
+    {
+      "nome": "Armadura do código Júnior",
+      "desc": "Armadura feito em linguagem simples com toques de requinte ",
+      "urlImage": "chest_level2",
+      "type": "chestplate",
+      "stats": 20,
+      "id": 22
+    },
+    {
+      "nome": "Armadura do código Pleno",
+      "desc": "Armadura para os programadores que têm obtido destaque em Java, C# e Python",
+      "urlImage": "chest_level3",
+      "type": "chestplate",
+      "stats": 20,
+      "id": 23
+    },
+    {
+      "nome": "Armadura do código Senior",
+      "desc": "Armadura para o uso especial de programadores especializados em React-Native e typescript",
+      "urlImage": "chest_level4",
+      "type": "chestplate",
+      "stats": 20,
+      "id": 24
+    },
+    {
+      "nome": "Armadura do código FullStack",
+      "desc": "Armadura para o uso exclusivo dos programadores FullStack",
+      "urlImage": "chest_level5",
+      "type": "chestplate",
+      "stats": 20,
+      "id": 25
+    },
+    {
+      "nome": "Armadura do código Master",
+      "desc": "Armadura dos desenvolvedores do GTA VI",
+      "urlImage": "chest_level6",
+      "type": "chestplate",
+      "stats": 20,
+      "id": 26
+    },
+    {
+      "nome": "Armadura do código Supremo",
+      "desc": "Armadura dos desenvolvedores que não usam StackOverflow e ChatGPT",
+      "urlImage": "chest_level7",
+      "type": "chestplate",
+      "stats": 20,
+      "id": 27
+    },
+    {
+      "nome": "Armadura do alinhamento perfeito",
+      "desc": "Armadura daqueles que conseguem alinhar uma DIV",
+      "urlImage": "chest_level8",
+      "type": "chestplate",
+      "stats": 20,
+      "id": 28
+    },
+    {
+      "nome": "Armadura da fuga impossível",
+      "desc": "Armadura de raridade ímpar, usado por aqueles que conseguiram sair da Matrix ",
+      "urlImage": "chest_level9",
+      "type": "chestplate",
+      "stats": 20,
+      "id": 29
+    },
+    {
+      "nome": "Armadura do Mago Fred",
+      "desc": "Esse item dispensa comentários. Assim como o seu portardor",
+      "urlImage": "chest_level10",
+      "type": "chestplate",
+      "stats": 20,
+      "id": 30
+    },
+    {
+      "nome": "Luvas do código trainee",
+      "desc": "Luvas para uso dos estudantes ou recém chegados",
+      "urlImage": "gloves_level1",
+      "type": "gloves",
+      "stats": 20,
+      "id": 31
+    },
+    {
+      "nome": "Luvas do código Júnior",
+      "desc": "Luvas feito em linguagem simples com toques de requinte ",
+      "urlImage": "gloves_level2",
+      "type": "gloves",
+      "stats": 20,
+      "id": 32
+    },
+    {
+      "nome": "Luvas do código Pleno",
+      "desc": "Luvas para os programadores que têm obtido destaque em Java, C# e Python",
+      "urlImage": "gloves_level3",
+      "type": "gloves",
+      "stats": 20,
+      "id": 33
+    },
+    {
+      "nome": "Luvas do código Senior",
+      "desc": "Luvas para o uso especial de programadores especializados em React-Native e typescript",
+      "urlImage": "gloves_level4",
+      "type": "gloves",
+      "stats": 20,
+      "id": 34
+    },
+    {
+      "nome": "Luvas do código FullStack",
+      "desc": "Luvas para o uso exclusivo dos programadores FullStack",
+      "urlImage": "gloves_level5",
+      "type": "gloves",
+      "stats": 20,
+      "id": 35
+    },
+    {
+      "nome": "Luvas do código Master",
+      "desc": "Luvas dos desenvolvedores do GTA VI",
+      "urlImage": "gloves_level6",
+      "type": "gloves",
+      "stats": 20,
+      "id": 36
+    },
+    {
+      "nome": "Luvas do código Supremo",
+      "desc": "Luvas dos desenvolvedores que não usam StackOverflow e ChatGPT",
+      "urlImage": "gloves_level7",
+      "type": "gloves",
+      "stats": 20,
+      "id": 37
+    },
+    {
+      "nome": "Luvas do alinhamento perfeito",
+      "desc": "Luvas daqueles que conseguem alinhar uma DIV",
+      "urlImage": "gloves_level8",
+      "type": "gloves",
+      "stats": 20,
+      "id": 38
+    },
+    {
+      "nome": "Luvas da fuga impossível",
+      "desc": "Luvas de raridade ímpar, usado por aqueles que conseguiram sair da Matrix ",
+      "urlImage": "gloves_level9",
+      "type": "gloves",
+      "stats": 20,
+      "id": 39
+    },
+    {
+      "nome": "Luvas do Mago Fred",
+      "desc": "Esse item dispensa comentários. Assim como o seu portardor",
+      "urlImage": "gloves_level10",
+      "type": "gloves",
+      "stats": 20,
+      "id": 40
+    },
+    {
+      "nome": "Anel do código trainee",
+      "desc": "Anel para uso dos estudantes ou recém chegados",
+      "urlImage": "ring_level1",
+      "type": "ring",
+      "stats": 20,
+      "id": 41
+    },
+    {
+      "nome": "Anel do código Júnior",
+      "desc": "Anel feito em linguagem simples com toques de requinte ",
+      "urlImage": "ring_level2",
+      "type": "ring",
+      "stats": 20,
+      "id": 42
+    },
+    {
+      "nome": "Anel do código Pleno",
+      "desc": "Anel para os programadores que têm obtido destaque em Java, C# e Python",
+      "urlImage": "ring_level3",
+      "type": "ring",
+      "stats": 20,
+      "id": 43
+    },
+    {
+      "nome": "Anel do código Senior",
+      "desc": "Anel para o uso especial de programadores especializados em React-Native e typescript",
+      "urlImage": "ring_level4",
+      "type": "ring",
+      "stats": 20,
+      "id": 44
+    },
+    {
+      "nome": "Anel do código FullStack",
+      "desc": "Anel para o uso exclusivo dos programadores FullStack",
+      "urlImage": "ring_level5",
+      "type": "ring",
+      "stats": 20,
+      "id": 45
+    },
+    {
+      "nome": "Anel do código Master",
+      "desc": "Anel dos desenvolvedores do GTA VI",
+      "urlImage": "ring_level6",
+      "type": "ring",
+      "stats": 20,
+      "id": 46
+    },
+    {
+      "nome": "Anel do código Supremo",
+      "desc": "Anel dos desenvolvedores que não usam StackOverflow e ChatGPT",
+      "urlImage": "ring_level7",
+      "type": "ring",
+      "stats": 20,
+      "id": 47
+    },
+    {
+      "nome": "Anel do alinhamento perfeito",
+      "desc": "Anel daqueles que conseguem alinhar uma DIV",
+      "urlImage": "ring_level8",
+      "type": "ring",
+      "stats": 20,
+      "id": 48
+    },
+    {
+      "nome": "Anel da fuga impossível",
+      "desc": "Anel de raridade ímpar, usado por aqueles que conseguiram sair da Matrix ",
+      "urlImage": "ring_level9",
+      "type": "ring",
+      "stats": 20,
+      "id": 49
+    },
+    {
+      "nome": "Anel do Mago Fred",
+      "desc": "Esse item dispensa comentários. Assim como o seu portardor",
+      "urlImage": "ring_level10",
+      "type": "ring",
+      "stats": 20,
+      "id": 50
+    },
+    {
+      "nome": "Botas do código trainee",
+      "desc": "Botas para uso dos estudantes ou recém chegados",
+      "urlImage": "boots_level1",
+      "type": "boots",
+      "stats": 20,
+      "id": 51
+    },
+    {
+      "nome": "Botas do código Júnior",
+      "desc": "Botas feito em linguagem simples com toques de requinte ",
+      "urlImage": "boots_level2",
+      "type": "boots",
+      "stats": 20,
+      "id": 52
+    },
+    {
+      "nome": "Botas do código Pleno",
+      "desc": "Botas para os programadores que têm obtido destaque em Java, C# e Python",
+      "urlImage": "boots_level3",
+      "type": "boots",
+      "stats": 20,
+      "id": 53
+    },
+    {
+      "nome": "Botas do código Senior",
+      "desc": "Botas para o uso especial de programadores especializados em React-Native e typescript",
+      "urlImage": "boots_level4",
+      "type": "boots",
+      "stats": 20,
+      "id": 54
+    },
+    {
+      "nome": "Botas do código FullStack",
+      "desc": "Botas para o uso exclusivo dos programadores FullStack",
+      "urlImage": "boots_level5",
+      "type": "boots",
+      "stats": 20,
+      "id": 55
+    },
+    {
+      "nome": "Botas do código Master",
+      "desc": "Botas dos desenvolvedores do GTA VI",
+      "urlImage": "boots_level6",
+      "type": "boots",
+      "stats": 20,
+      "id": 56
+    },
+    {
+      "nome": "Botas do código Supremo",
+      "desc": "Botas dos desenvolvedores que não usam StackOverflow e ChatGPT",
+      "urlImage": "boots_level7",
+      "type": "boots",
+      "stats": 20,
+      "id": 57
+    },
+    {
+      "nome": "Botas do alinhamento perfeito",
+      "desc": "Botas daqueles que conseguem alinhar uma DIV",
+      "urlImage": "boots_level8",
+      "type": "boots",
+      "stats": 20,
+      "id": 58
+    },
+    {
+      "nome": "Botas da fuga impossível",
+      "desc": "Botas de raridade ímpar, usado por aqueles que conseguiram sair da Matrix ",
+      "urlImage": "boots_level9",
+      "type": "boots",
+      "stats": 20,
+      "id": 59
+    },
+    {
+      "nome": "Botas do Mago Fred",
+      "desc": "Esse item dispensa comentários. Assim como o seu portardor",
+      "urlImage": "boots_level10",
+      "type": "boots",
+      "stats": 20,
+      "id": 60
+    }
+  ],
+  "personagens": [
+    {
+      "id": 1,
+      "nome": "Guerreiro",
+      "attack": 2000,
+      "health": 3000,
+      "urlImage": "character1"
+    },
+    {
+      "id": 2,
+      "nome": "2B",
+      "attack": 4000,
+      "health": 4000,
+      "urlImage": "character2"
+    },
+    {
+      "id": 3,
+      "nome": "Caveira Guerreira",
+      "attack": 1000,
+      "health": 5000,
+      "urlImage": "character3"
+    },
+    {
+      "id": 4,
+      "nome": "Elfo",
+      "attack": 4000,
+      "health": 1000,
+      "urlImage": "character4"
+    },
+    {
+      "id": 5,
+      "nome": "Amazona",
+      "attack": 2000,
+      "health": 2000,
+      "urlImage": "character5"
+    },
+    {
+      "id": 6,
+      "nome": "Anão",
+      "attack": 500,
+      "health": 7000,
+      "urlImage": "character6"
+    },
+    {
+      "id": 7,
+      "nome": "Curandeiro",
+      "attack": 5000,
+      "health": 1000,
+      "urlImage": "character7"
+    },
+    {
+      "id": 8,
+      "nome": "Mago",
+      "attack": 5000,
+      "health": 1000,
+      "urlImage": "character8"
+    },
+    {
+      "id": 9,
+      "nome": "Arqueiro",
+      "attack": 7000,
+      "health": 500,
+      "urlImage": "character9"
+    },
+    {
+      "id": 10,
+      "nome": "Espectro",
+      "attack": 3000,
+      "health": 3000,
+      "urlImage": "feiticeiro"
+    },
+    {
+      "id": 11,
+      "nome": "Bruxa",
+      "attack": 5000,
+      "health": 1000,
+      "urlImage": "bruxa"
     }
   ]
 }

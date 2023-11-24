@@ -12,6 +12,7 @@ import { styles } from './styles';
 import Gt from '../../../../assets/favicon.png';
 import api from '../../../services/api/api';
 import { Button } from '../../Button';
+import { useAuth } from '../../../Context/Auth';
 
 interface ModalItemDetailsProps {
   isModalVisible: boolean;
@@ -41,6 +42,8 @@ export const ModalItemDetails = ({
 }: ModalItemDetailsProps) => {
   const [isLoading, setIsLoading] = React.useState<boolean>(true);
   const [item, setItem] = React.useState<getItemDetailsResponse>();
+  const { userLogado } = useAuth()
+
 
   React.useEffect(() => {
     writeMagicItemDetails(index);
@@ -50,7 +53,7 @@ export const ModalItemDetails = ({
     try {
       if (selectedInventoryItem != null) {
         console.log(selectedInventoryItem);
-        const response = await api.get(`/user/1`);
+        const response = await api.get(`/user/${userLogado.id}`);
         const itensInventory = response.data.itens;
         const itens = response.data.itensEquipados;
 
@@ -69,9 +72,9 @@ export const ModalItemDetails = ({
 
         itensFiltrados.push(newItemEquipped);
 
-        await api.patch(`user/1`, { itensEquipados: itensFiltrados });
+        await api.patch(`/user/${userLogado.id}`, { itensEquipados: itensFiltrados });
 
-        await api.patch(`user/1`, { itens: itensInventoryFiltrados });
+        await api.patch(`/user/${userLogado.id}`, { itens: itensInventoryFiltrados });
       }
     } catch (error) {
       console.error(error);
@@ -81,7 +84,7 @@ export const ModalItemDetails = ({
   const unEquipItem = async () => {
     try {
       if (selectedInventoryItem != null) {
-        const response = await api.get(`/user/1`);
+        const response = await api.get(`/user/${userLogado.id}`);
         const itensInventory = response.data.itens;
         const itens = response.data.itensEquipados;
 
@@ -97,9 +100,9 @@ export const ModalItemDetails = ({
 
         itensInventory.push(itemUnequipping);
 
-        await api.patch(`user/1`, { itensEquipados: itensFiltrados });
+        await api.patch(`/user/${userLogado.id}`, { itensEquipados: itensFiltrados });
 
-        await api.patch(`user/1`, { itens: itensInventory });
+        await api.patch(`/user/${userLogado.id}`, { itens: itensInventory });
       }
     } catch (error) {
       console.error(error);

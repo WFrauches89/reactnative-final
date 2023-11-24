@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   Modal,
@@ -6,11 +6,12 @@ import {
   ActivityIndicator,
   Image,
   FlatList,
-} from 'react-native';
-import { styles } from './style';
-import api from '../../../services/api/api';
-import { Button } from '../../Button';
-import images from '../../../../assets/images';
+} from "react-native";
+import { styles } from "./style";
+import api from "../../../services/api/api";
+import { Button } from "../../Button";
+import images from "../../../../assets/images";
+import { useAuth } from "../../../Context/Auth";
 
 interface ModalItemDetailsProps {
   isModalVisible: boolean;
@@ -21,8 +22,8 @@ interface ModalItemDetailsProps {
 export interface getItemDetailsResponse {
   id: string;
   nome: string;
-  força: number;
-  defesa: number;
+  attack: number;
+  health: number;
   urlImage: string;
 }
 
@@ -33,16 +34,17 @@ export const ModalChangeCharacters = ({
 }: ModalItemDetailsProps) => {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [items, setItems] = React.useState<getItemDetailsResponse[]>([]);
+  const { userLogado } = useAuth();
 
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get(`/user/1`);
+        const response = await api.get(`/user/${userLogado.id}`);
         const responseItems = response.data.personagens;
 
         setItems(responseItems);
       } catch (error) {
-        console.error('Erro ao buscar dados:', error);
+        console.error("Erro ao buscar dados:", error);
       }
     };
 
@@ -52,11 +54,11 @@ export const ModalChangeCharacters = ({
   const equipItem = async (index) => {
     try {
       if (index && index.id) {
-        await api.patch(`/user/1`, { personagemEquipado: [index] });
+        await api.patch(`/user/${userLogado.id}`, { personagemEquipado: [index] });
       } else {
       }
     } catch (error) {
-      console.error('Erro ao equipar o personagem:', error);
+      console.error("Erro ao equipar o personagem:", error);
     }
   };
 
@@ -78,13 +80,14 @@ export const ModalChangeCharacters = ({
       <View style={styles.modal}>
         <View style={styles.modalContainer}>
           {isLoading ? (
-            <ActivityIndicator size={'large'} />
+            <ActivityIndicator size={"large"} />
           ) : (
             <>
               <FlatList
                 data={items}
                 keyExtractor={(item) => item.id}
                 // horizontal={true}
+                showsVerticalScrollIndicator={false}
                 renderItem={({ item }) => (
                   <View style={styles.viewcharacter}>
                     <Image
@@ -98,11 +101,11 @@ export const ModalChangeCharacters = ({
                       </View>
                       <View>
                         <Text style={styles.characterinfo}>Ataque</Text>
-                        <Text style={styles.characterinfo}>{item.força}</Text>
+                        <Text style={styles.characterinfo}>{item.attack}</Text>
                       </View>
                       <View>
                         <Text style={styles.characterinfo}>Defesa</Text>
-                        <Text style={styles.characterinfo}>{item.defesa}</Text>
+                        <Text style={styles.characterinfo}>{item.health}</Text>
                       </View>
                     </View>
                     <Button

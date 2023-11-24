@@ -17,7 +17,7 @@ export default function Header() {
     energia: 0,
     gema: 0,
   });
-  const { refreshPage } = useAuth();
+  const { refreshPage, userLogado } = useAuth();
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
@@ -32,7 +32,7 @@ export default function Header() {
 
   const fetchUserData = async () => {
     try {
-      const response = await api.get(`/user/1`);
+      const response = await api.get(`/user/${userLogado.id}`);
       const responserecurso = response.data.recursos;
       setrecursos(responserecurso);
     } catch (error) {

@@ -30,6 +30,7 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'grey',
     marginBottom: 40,
+    textAlign: 'center',
   },
   titleContinue: {
     fontSize: 20,
